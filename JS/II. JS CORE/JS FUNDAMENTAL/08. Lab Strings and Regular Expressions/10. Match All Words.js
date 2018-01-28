@@ -1,5 +1,5 @@
 function matchAllWords(str) {
-    let pattern = /[a-zA-Z]+/g;
+    let pattern = /\w+/g;
     str = str.match(pattern);
     console.log(str.join('|'));
 }
