@@ -1,7 +1,7 @@
 function lowestPricesInCities(arr) {
     let result = new Map();
     for (let str of arr) {
-        let tokens = str.split(" | ");
+        let tokens = str.split(' | ');
         let town = tokens[0];
         let product = tokens[1];
         let price = Number(tokens[2]);
