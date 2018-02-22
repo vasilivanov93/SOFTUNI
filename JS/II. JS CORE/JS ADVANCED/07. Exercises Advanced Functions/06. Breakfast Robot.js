@@ -12,7 +12,7 @@ let solution = function() {
             flavour: 2
         },
         coke: {
-            carbohydrate: 11,
+            carbohydrate: 10,
             flavour: 20
         },
         burger: {
@@ -71,19 +71,18 @@ let solution = function() {
                 return 'Success';
             }
         } else if (command === 'report') {
-            return `protein=${robot.protein} carbohydrate=${robot.carbohydrate} fat=${robot.fat} flavour=${robot.flavour} `;
+            return `protein=${robot.protein} carbohydrate=${robot.carbohydrate} fat=${robot.fat} flavour=${robot.flavour}`;
         }
     }
 };
 
 solution = solution();
-console.log(solution('prepare cheverme 1'));
-console.log(solution('restock protein 10'));
-console.log(solution('prepare cheverme 1'));
-console.log(solution('restock carbohydrate 10'));
-console.log(solution('prepare cheverme 1'));
-console.log(solution('restock fat 10'));
-console.log(solution('prepare cheverme 1'));
-console.log(solution('restock flavour 10'));
-console.log(solution('prepare cheverme 1'));
+console.log(solution('restock protein 100'));
+console.log(solution('restock carbohydrate 100'));
+console.log(solution('restock fat 100'));
+console.log(solution('restock flavour 100'));
+console.log(solution('report'));
+console.log(solution('prepare coke 2'));
+console.log(solution('report'));
+console.log(solution('prepare coke 1'));
 console.log(solution('report'));
