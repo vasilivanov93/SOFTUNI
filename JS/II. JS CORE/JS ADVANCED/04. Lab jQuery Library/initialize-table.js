@@ -30,7 +30,7 @@ function initializeTable() {
       }      
 
       function moveRowUp() {
-        let row = $(this).parent().parent();с
+        let row = $(this).parent().parent();
         row.insertBefore(row.prev());
         row.fadeIn();
         fixRowLinks();
