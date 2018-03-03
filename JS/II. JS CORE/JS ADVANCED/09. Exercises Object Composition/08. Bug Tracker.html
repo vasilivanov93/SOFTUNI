@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Tracker</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+    crossorigin="anonymous"></script>
+    <style>
+        #wrapper {
+            width: 800px;
+            border: 1px solid black;
+        }
+        #titlebar {
+            background-color: beige;
+            font-size: 2em;
+            padding: 0.5em;
+        }
+        .report {
+            margin: 1em;
+            border:1px solid black;
+            width: 400px;
+        }
+        .report .title {
+            background-color: cornflowerblue;
+            color: white;
+            padding: 0.25em;
+            position: relative;
+        }
+        .report .body p {
+            margin: 0.5em;
+        }
+        .report .title .status {
+            display: inline-block;
+            right: 0px;
+            position: absolute;
+            margin-right: 0.5em;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="titlebar">Bug tracker</div>
+    <div id="content">
+        <div class="report">
+            <div class="body">
+                <p>Description</p>
+            </div>
+            <div class="title"><span class="author">Submitted by: Author</span><span class="status">Open | 5</span></div>
+        </div>
+        <div class="report">
+            <div class="body">
+                <p>Description</p>
+            </div>
+            <div class="title"><span class="author">Submitted by: Author</span><span class="status">Open | 5</span></div>
+        </div>
+        <div class="report">
+            <div class="body">
+                <p>Description</p>
+            </div>
+            <div class="title"><span class="author">Submitted by: Author</span><span class="status">Open | 5</span></div>
+        </div>
+    </div>
+</div>
+<script>
+function bugReportModule() {
+    let id = 0;
+    let container;
+    let sortingContainer = [];
+    return {
+        report: function (author, description, reproducible, severity) {
+            let newReport = $('<div>')
+                .addClass('report')
+                .attr('id', `report_${id}`);
+
+            let body = $('<div>')
+                .addClass('body')
+                .append($('<p>').text(`${description}`));
+
+            let title = $('<div>')
+                .addClass('title')
+                .append($('<span>').addClass('author').text(`${author}`))
+                .append($('<span>').addClass('status').text(`Open | ${severity}`));
+
+            newReport.append(body);
+            newReport.append(title);
+            container.append(newReport);
+
+            sortingContainer[id] = {
+                id: id,
+                author: author,
+                description: description,
+                reproducible: reproducible,
+                severity: severity,
+                status: 'Open'
+            };
+
+            id++;
+        },
+        setStatus: function (id, newStatus) {
+            sortingContainer[id].status = newStatus;
+            let statusRef = $(`#report_${id}`).find('.status');
+            let oldText = statusRef.text();
+            let args = oldText.split(' | ');
+            let newText = `${newStatus}` + ' | ' + args[1];
+            statusRef.text(newText);
+        },
+        remove: function (id) {
+            sortingContainer = sortingContainer
+                .filter(e => e.id !== id);
+            $(`#report_${id}`).remove();
+        },
+        sort: function (method) {
+            switch (method) {
+                case 'author': return sortByAuthor();
+                case 'severity': return sortBySeverity();
+                case 'ID': return sortById();
+            }
+        },
+        output: function (selector) {
+            container = $(selector);
+        }
+    };
+
+    function sortByAuthor() {
+        container.html('');
+        sortingContainer = sortingContainer
+            .sort((a,b) => a.author.localeCompare(b.author));
+        container.html(reconstructContainer(sortingContainer));
+    }
+
+    function sortBySeverity() {
+        container.html('');
+        sortingContainer = sortingContainer
+            .sort((a,b) => a.severity - b.severity);
+        container.html(reconstructContainer(sortingContainer));
+    }
+
+    function sortById() {
+        container.html('');
+        sortingContainer = sortingContainer
+            .sort((a,b) => a.id - b.id);
+        container.html(reconstructContainer(sortingContainer));
+    }
+
+    function reconstructContainer(sorted) {
+        for (let bug of sorted) {
+            let newReport = $('<div>')
+                .addClass('report')
+                .attr('id', `report_${bug.id}`);
+
+            let body = $('<div>')
+                .addClass('body')
+                .append($('<p>').text(`${bug.description}`));
+
+            let title = $('<div>')
+                .addClass('title')
+                .append($('<span>').addClass('author').text(`${bug.author}`))
+                .append($('<span>').addClass('status').text(`Open | ${bug.severity}`));
+
+            newReport.append(body);
+            newReport.append(title);
+            container.append(newReport);
+        }
+    }
+}
+
+let tracker = bugReportModule();
+
+tracker.output('#content');
+tracker.report('guy', 'report content', true, 5);
+tracker.report('second guy', 'report content 2', true, 3);
+tracker.report('abv', 'report content three', true, 4);
+tracker.sort('author');
+</script>
+</body>
+</html>
