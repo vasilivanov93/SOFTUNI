@@ -44,6 +44,26 @@
             $('#selectedTowns').text("Selected towns: " + towns);
         });
     }
+	
+	//or
+	
+	//function attachEvents() {
+	//	let items = $('#items li').toArray();
+	//	for (let item of items) {
+	//		$(item).on('click', function () {
+	//			if ($(item).attr('data-selected')) {
+	//				$(item).removeAttr('data-selected').css('background', '');
+	//			} else {
+	//				$(item).attr('data-selected', true).css('background', '#DDD');
+	//			}
+	//		});
+	//	}
+	//
+	//	$('#showTownsButton').on('click', function () {
+	//		let li = $('#items li[data-selected=true]').toArray().map(w => $(w).text()).join(', ');
+	//		$('#selectedTowns').text(`Selected towns: ${li}`);
+	//	})
+	//}
 </script>
 </body>
 </html>

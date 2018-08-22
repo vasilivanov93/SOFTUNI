@@ -1,0 +1,9 @@
+{
+  "name": "Handlebars-Exercises-Skeleton",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "handlebars": "^4.0.11",
+    "jquery": "^3.3.1"
+  }
+}

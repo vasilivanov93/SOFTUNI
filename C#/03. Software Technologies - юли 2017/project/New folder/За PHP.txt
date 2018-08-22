@@ -1,0 +1,110 @@
+За PHP:
+1. Пускаме си базата с XAMPP
+2. Отваряме HeidiSQL_9.4_Portable
+3. Отваряме проекта с Php Storm  и отвавяме в него конзола и пишем следната команда "php .\composer.phar install".
+4. След като се инсталира composet и се indexsing проекта пишем следната команда, която ни създава база данни в HeidiSQL:
+php bin/console doctrine:database:create
+5. Отиваме в папка Entity и изтриваме файла. След това в конзолата пишем командата "php bin/console doctrine:generate:entity", 
+с която си създаваме модела. За да създадем файла пишем в конзолата "AppBundle:името на проекта". След това натискаме
+enter за да изберем по default анотации.След това си създаваме полета, които ни трябват (за id се създава автоматично). След
+като се създаде файла преименувам task на tasks (в първата анотация на класа).
+6. Изтриваме от папка Form файла и пишем командата "php bin/console doctrine:generate:form AppBundle:Task",
+която ще ни направи форма. След това изтриване "public function getBlockPrefix". В builder на title и status слагам
+TextType с логото на Sympfony.
+7. Отиваме в TaskController и в index пишем:
+	$taskRepository = $this->getDoctrine()->getRepository(Task::class);
+
+	$tasks = $taskRepository->findAll();
+
+	return $this->render(':task:index.html.twig', ['tasks' => $tasks]);
+
+или ако има повече пропъртита
+
+	$taskRepository = $this->getDoctrine()->getRepository(Task::class);
+
+        $tasksOpen = $taskRepository->findBy(["status"=>"Open"]);
+        $tasksInProgress = $taskRepository->findBy(["status"=>"In Progress"]);
+        $tasksFinished = $taskRepository->findBy(["status"=>"Finished"]);
+
+        return $this->render(":task:index.html.twig",
+            ["openTasks" => $tasksOpen, "inProgressTasks"=>$tasksInProgress, "finishedTasks"=>$tasksFinished]);
+
+Стартираме проекта и той трябва да се визуализира в браузарът.
+8. След това в конзолата пишем командата "php bin/console doctrine:schema:update --force".
+9. След това отиване на create и слагаме следния код:
+
+	$task = new Task();
+ 
+       
+	$form = $this->createForm(TaskType::class, $task);
+ 
+       
+	$form->handleRequest($request);
+ 
+       
+	if ($form->isSubmitted() && $form->isValid()) {
+            
+	$em = $this->getDoctrine()->getManager();
+
+            
+	$em->persist($task);
+            
+	$em->flush();
+  
+          
+	return $this->redirect("/");     
+}
+
+return $this->render(":task:create.html.twig", ["task" => $task, "form" => $form->createView()]);
+
+10. Отиваме на edit или delete functions:
+
+За edit следния код:
+
+	$taskRepository = $this->getDoctrine()->getRepository(Task::class);
+
+        $task = $taskRepository->find($id);
+
+        if ($task == null) {
+            return $this->redirect("/");
+        }
+
+        $form = $this->createForm(TaskType::class, $task);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->merge($task);
+            $em->flush();
+
+            return $this->redirect("/");
+        }
+
+        return $this->render(":task:edit.html.twig", ["task" => $task, "form" => $form->createView()]);
+
+За delete следния код:
+
+	$taskRepository = $this->getDoctrine()->getRepository(Task::class);
+
+        $task = $taskRepository->find($id);
+
+        if ($task == null){
+            return $this->redirect("/");
+        }
+
+        $form = $this->createForm(TaskType::class, $task);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->remove($task);
+            $em->flush();
+
+            return $this->redirect("/");
+        }
+
+        return $this->render('task/delete.html.twig', ['task' => $task, 'form' => $form->createView()]);

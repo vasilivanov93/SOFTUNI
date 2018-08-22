@@ -25,7 +25,7 @@ function orbit(arr) {
         let startCol = Math.max(0, currentCol - counter);;
         let endCol = Math.min(matrix[0].length - 1, currentCol + counter);
 
-        for (let row = 0; row <= endRow; row++) {
+        for (let row = startRow; row <= endRow; row++) {
             for (let col = startCol; col <= endCol; col++) {
                 if(matrix[row][col] === 0) {
                     matrix[row][col] = num;

@@ -23,6 +23,9 @@
             sum += Number(elements[i].textContent);
         }
         elements[elements.length - 1].textContent = sum;
+		//With JQUERY
+		//let sum = $('tr').find('td:last').toArray().map(r => $(r).text().trim()).reduce((a, b) => Number(a) + Number(b));
+        //$('#sum').append(sum);
     }
 </script>        
 </body>

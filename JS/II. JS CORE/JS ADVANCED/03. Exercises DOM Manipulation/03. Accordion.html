@@ -40,17 +40,30 @@
   </div>
 </div>
 <script>
-  function toggle() {
-    let button = document.getElementsByClassName("button")
-    let x = document.getElementById("extra"); 
-    if (x.style.display === 'none' || x.style.display === '') {
-        button[0].textContent = "Less";
-        x.style.display = "block";
-    } else if (x.style.display === 'block') {
-        x.style.display = "none";
-        button[0].textContent = "More";
-    }
-  }
+	function toggle() {
+		let button = document.getElementsByClassName("button")
+		let x = document.getElementById("extra"); 
+		if (x.style.display === 'none' || x.style.display === '') {
+			button[0].textContent = "Less";
+			x.style.display = "block";
+		} else if (x.style.display === 'block') {
+			x.style.display = "none";
+			button[0].textContent = "More";
+		}
+	}
+	
+	//With JQUERY
+    //function toggle() {
+	//	let button = $('.button');
+	//	let textBtn = button.text();
+	//	if (textBtn.includes('More')) {
+	//		button.text(textBtn.replace('More', 'Less'));
+	//		$('#extra').css('display', 'block');
+	//	} else {
+	//		button.text(textBtn.replace('Less', 'More'));
+	//		$('#extra').css('display', 'none');
+	//	}
+	//}
 </script>
 </body>
 </html>

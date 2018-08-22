@@ -1,0 +1,159 @@
+За C#:
+1. Отваряме проекта с Visual Studio.
+2. Натискаме Ctrl+Shift+B за да инсталираме NuGet packages.
+3. Отиваме в папка Models/Task и си правим модела.
+
+        [Key]
+        
+	public int Id { get; set; }
+
+        
+
+	[Required]
+        
+	public string Title { get; set; }
+
+        
+
+	[Required]
+        
+	public string Status { get; set; }
+
+4. Отиваме в папка Controllers/ТаskController и си правим логиката:
+4.1 За Index поставяме следния код:
+
+	using (var db = new TeisterMaskDbContext())
+            
+	{
+                
+		var tasks = db.Tasks.ToList();
+
+                
+
+		return View(tasks);
+            
+	}
+
+Преди да стартираме проекта за първи път си пускаме базата данни.
+
+4.2 За HttpGet create поставяме следния код:
+
+	return View();
+
+4.3 За HttpPost crate поставяме следния код:
+
+	if (ModelState.IsValid)
+            
+	{
+                
+		using (var db = new TeisterMaskDbContext())
+                
+		{
+                    
+			db.Tasks.Add(task);
+                    
+			db.SaveChanges();
+
+                    
+
+			return Redirect("/");
+                
+		}
+        }
+
+            
+
+	return View();
+
+4.4 За HttpGet edit поставяме следния код:
+
+	using (var db = new TeisterMaskDbContext())
+            
+	{
+                
+		var task = db.Tasks.Find(id);
+
+                
+
+		if (task != null)
+                
+		{
+                    
+			return View(task);
+                
+		}
+            
+	}
+
+            
+
+	return Redirect("/");
+
+4.5 За HttpPost edit поставяме следния код:
+
+	if (!ModelState.IsValid)
+            
+	{
+                
+		return View(taskModel);
+            
+	}
+
+            
+
+	using (var db = new TeisterMaskDbContext())
+            
+	{
+                
+		var taskFromDb = db.Tasks.Find(taskModel.Id);
+
+                
+
+		if (taskFromDb != null)
+                
+		{
+                    
+			taskFromDb.Title = taskModel.Title;
+                    
+			taskFromDb.Status = taskModel.Status;
+                    
+			db.SaveChanges();
+                
+		}
+            
+	}
+
+            
+
+	return Redirect("/");
+
+4.6 За HttpGet delete поставяме следния код:
+
+	using (var db = new TodoListDbContext())
+        {
+              var task = db.Tasks.Find(id);
+
+              if (task == null)
+              {
+                    return RedirectToAction("Index");
+              }
+
+              return View(task);
+        }
+
+4.7 За HttpPost delete поставяме следния код:
+
+	using (var db = new TodoListDbContext())
+        {
+                var task = db.Tasks.Find(id);
+
+                if (task == null)
+                {
+                    return RedirectToAction("Index");
+                }
+
+                db.Tasks.Remove(task);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+        }

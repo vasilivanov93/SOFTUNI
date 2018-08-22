@@ -1,0 +1,161 @@
+За Java:
+1. Отваряме проекта с InteliJ IDEA като използваме Import с Maven.
+2. За да можем да стартираме проекта отиваме с src/main/java/"NameProject"Application и натискаме двата плей бутона.
+3. Стартираме XAMMP с MSQL и страртираме Heidi за да закачим базата данни.
+4. В entity/Task си правим модела с нужните елементи и добавяме необходимите анутации.
+
+@Id
+
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+private int id;
+
+    
+
+@Column(nullable = false)
+    
+private String title;
+
+    
+
+@Column(nullable = false)
+    
+private String status;
+
+С alt + Ins правим Getter and Setter, Constructor(без Id)
+и оше един празен Constructor.
+
+5. След това си правим BundindModels, който е съшия като модела, но без Id, aнутации и празния конструктор.
+6. Отваряме си Controller и си правим get и post заявките:
+
+	private final FilmRepository filmRepository;
+
+	@Autowired
+	public FilmController(FilmRepository filmRepository) {
+		this.filmRepository = filmRepository;
+	}
+
+6.1 За Index
+
+		List<Film> films = filmRepository.findAll();
+
+		model.addAttribute("films", films);
+		model.addAttribute("view", "film/index");
+
+		return "base-layout";
+
+или ако имаме повече пропъртитта като на статус пишем:
+
+	List<Task> openTasks = tasks.stream()
+				
+	.filter(t->t.getStatus().equals("Open"))
+				
+	.collect(Collectors.toList());
+
+				
+
+	List<Task> inProgressTasks = tasks.stream()
+				
+	.filter(t->t.getStatus().equals("In Progress"))
+				
+	.collect(Collectors.toList());
+
+		
+
+	List<Task> finishedTasks = tasks.stream()
+				
+	.filter(t->t.getStatus().equals("Finished"))
+				
+	.collect(Collectors.toList());
+
+						
+
+	model.addAttribute("openTasks", openTasks);
+		
+	model.addAttribute("inProgressTasks", inProgressTasks);
+		
+	model.addAttribute("finishedTasks", finishedTasks);
+
+		
+		
+
+	model.addAttribute("view", "task/index");
+		
+	return "base-layout";
+
+
+6.2 За Get create
+
+		model.addAttribute("view", "film/create");
+
+		return "base-layout";
+
+
+6.3 За Post create
+
+		Film film = new Film(filmBindingModel.getName(), filmBindingModel.getGenre(),
+				filmBindingModel.getDirector(), filmBindingModel.getYear());
+
+		filmRepository.saveAndFlush(film);
+
+		return "redirect:/";
+
+
+6.4 За Get edit
+
+		Film film = filmRepository.findOne(id);
+
+		if (film != null) {
+
+			model.addAttribute("film", film);
+			model.addAttribute("view", "film/edit");
+
+			return "base-layout";
+		}
+
+		return "redirect:/";
+
+
+6.5 За Post edit
+
+		Film film = this.filmRepository.findOne(id);
+
+		if (film != null){
+			film.setName(filmBindingModel.getName());
+			film.setGenre(filmBindingModel.getGenre());
+			film.setDirector(filmBindingModel.getDirector());
+			film.setYear(filmBindingModel.getYear());
+			
+			this.filmRepository.saveAndFlush(film);
+			
+			return "redirect:/";
+		}
+
+		return "redirect:/";
+
+
+6.6 За Get delete
+		Film film = filmRepository.findOne(id);
+
+		if (film != null) {
+
+			model.addAttribute("film", film);
+			model.addAttribute("view", "film/delete");
+
+			return "base-layout";
+		}
+
+		return "redirect:/";
+
+
+6.7 За Post delete
+
+	Film film = this.filmRepository.findOne(id);
+
+	if (film != null){
+		filmRepository.delete(film);
+
+		return "redirect:/";
+	}
+
+	return "redirect:/";

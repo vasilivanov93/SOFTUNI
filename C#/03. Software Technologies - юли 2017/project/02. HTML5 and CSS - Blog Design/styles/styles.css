@@ -1,0 +1,22 @@
+.body-content{
+	margin-top: 100px;
+}
+
+.author{
+	opacity: 0.8;
+}
+
+.footer-content{
+	margin-top: 300px;
+	background-color: #F8F8F8;
+}
+
+
+.read-more{
+	margin-bottom: 10px;
+}
+
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}

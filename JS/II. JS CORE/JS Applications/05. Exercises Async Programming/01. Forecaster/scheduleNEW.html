@@ -1,0 +1,79 @@
+function attachEvents() {
+    $('#submit').on('click', submit);
+    
+    function submit() {
+        $.ajax({
+            method: 'GET',
+            url: `https://judgetests.firebaseio.com/locations.json`
+        }).then(nameAndCode).catch(handleError);
+
+        function nameAndCode(response) {
+            $('#forecast').css('display', 'block');
+            $('#current').empty();
+            $('#upcoming').empty();
+            for (let obj of response) {
+                if ($('#location').val() === obj.name) {
+                    $('#location').val('');
+                    $.ajax({
+                        method: 'GET',
+                        url: `https://judgetests.firebaseio.com/forecast/today/${obj.code}.json`
+                    }).then(currentConditions).catch(handleError);
+
+                    $.ajax({
+                        method: 'GET',
+                        url: `https://judgetests.firebaseio.com/forecast/upcoming/${obj.code}.json`
+                    }).then(upcomingConditions).catch(handleError);
+                }
+            }
+        }
+
+        function currentConditions(res) {
+            $('#current').append($('<div>').addClass('label').text('Current conditions'));
+            let symbol = '';
+            if (res.forecast.condition === 'Sunny') {
+                symbol = '&#x2600;';
+            } else if (res.forecast.condition === 'Partly sunny') {
+                symbol = '&#x26C5;';
+            } else if (res.forecast.condition === 'Overcast') {
+                symbol = '&#x2601;';
+            } else if (res.forecast.condition === 'Rain') {
+                symbol = '&#x2614;';
+            }
+
+            let spanSymbol = $('<span>').addClass('condition symbol').html(symbol);
+            $('#current').append(spanSymbol);
+
+            let spanCondition = $('<span>').addClass('condition');
+            spanCondition.append($('<span>').addClass('forecast-data').text(res.name));
+            spanCondition.append($('<span>').addClass('forecast-data').html(`${res.forecast.low}` + '&#176;' + '/' + `${res.forecast.high}` + '&#176;'));
+            spanCondition.append($('<span>').addClass('forecast-data').text(res.forecast.condition));
+            $('#current').append(spanCondition);
+        }
+
+        function upcomingConditions(res) {
+            $('#upcoming').append($('<div>').addClass('label').text('Three-day forecast'));
+            for (let obj of res.forecast) {
+                let spanUpcoming = $('<span>').addClass('upcoming');
+                let symbol = '';
+                if (obj.condition === 'Sunny') {
+                    symbol = '&#x2600;';
+                } else if (obj.condition === 'Partly sunny') {
+                    symbol = '&#x26C5;';
+                } else if (obj.condition === 'Overcast') {
+                    symbol = '&#x2601;';
+                } else if (obj.condition === 'Rain') {
+                    symbol = '&#x2614;';
+                }
+
+                spanUpcoming.append($('<span>').addClass('symbol').html(symbol));
+                spanUpcoming.append($('<span>').addClass('forecast-data').html(`${obj.low}` + '&#176;' + '/' + `${obj.high}` + '&#176;'));
+                spanUpcoming.append($('<span>').addClass('forecast-data').text(obj.condition));
+                $('#upcoming').append(spanUpcoming);
+            }
+        }
+
+        function handleError(error) {
+            $('#forecast').text('Error');
+        }
+    }
+}

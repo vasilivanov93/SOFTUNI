@@ -20,7 +20,21 @@
         }
         return result.join('; ');
     }    
-    console.log(extract("content"))  
+    console.log(extract("content"));
+	
+	//With JQUERY
+	//function extract(id) {
+    //    let content = $('#content').text();
+    //    let regex = /\((.*?)\)/g;
+    //    let match = regex.exec(content);
+    //    let result = [];
+    //    while (match) {
+    //        result.push(match[1]);
+    //        match = regex.exec(content);
+    //    }
+    //
+    //    return result.join('; ')
+    //}
 </script>     
 </body>
 </html>

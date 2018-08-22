@@ -23,33 +23,24 @@ function initializeTable() {
     function createCountry() {
         let country = $('#newCountryText').val();
         let capital = $('#newCapitalText').val();
-        addCountryToTable(country, capital, true);
+        addCountryToTable(country, capital);
         $('#newCountryText').val('');
         $('#newCapitalText').val('');
-        fixRowLinks();
       }      
 
       function moveRowUp() {
         let row = $(this).parent().parent();
         row.insertBefore(row.prev());
-        row.fadeIn();
-        fixRowLinks();
-
       }      
     
       function moveRowDown() {
         let row = $(this).parent().parent();
         row.insertAfter(row.next());
-        row.fadeIn();
-        fixRowLinks();
-
       }      
 
       function deleteRow() {
         let row = $(this).parent().parent();
         row.remove();
-        fixRowLinks();
-
       }      
 
       function fixRowLinks() {

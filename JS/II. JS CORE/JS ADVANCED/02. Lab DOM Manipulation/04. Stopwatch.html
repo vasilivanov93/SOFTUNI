@@ -35,6 +35,33 @@ function stopwatch() {
         document.getElementById('time').textContent = ("0" + Math.trunc(time / 60)).slice(-2) + ":" + ("0" + time % 60).slice(-2);
     }
 }
+
+//With Jquery
+//function stopwatch() {
+//    let time;
+//    let intervalID;
+//    let start = $('#startBtn');
+//    let stop = $('#stopBtn');
+//
+//    start.on('click', function () {
+//        time = -1;
+//        incrementTime();
+//        intervalID = setInterval(incrementTime, 1000);
+//        start.attr('disabled', 'disabled');
+//        stop.attr('disabled', false);
+//    });
+//
+//    stop.on('click', function () {
+//        clearInterval(intervalID);
+//        start.attr('disabled', false);
+//        stop.attr('disabled', 'disabled');
+//    });
+//
+//    function incrementTime() {
+//        time++;
+//        $('#time').text(("0" + Math.trunc(time / 60)).slice(-2) + ":" + ("0" + time % 60).slice(-2));
+//    }
+//}
 </script>            
 </body>
 </html>
