@@ -1,0 +1,27 @@
+table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+table, td, th {
+	border: 1px solid #cdcdcd;
+}
+
+table thead th {
+	background: #CCCCCC;
+	text-align: left;
+}
+
+tr:nth-child(odd) {
+	background: #F1F1F1;
+}
+
+tr:nth-child(even) {
+	background: #FFFFFF;
+}
+
+tbody tr:hover td{
+	background: #000;
+	color: #fff;
+	border-color: transparent;
+}

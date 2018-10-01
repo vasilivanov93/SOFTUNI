@@ -1,0 +1,57 @@
+.article {
+	margin: 0 5%;
+}
+
+.article header {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.first-section {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.first-line {
+	list-style-type: square;
+}
+
+.second-line {
+	list-style-type: disc;
+}
+
+.third-line {
+	list-style-type: circle;
+}
+
+table, td {
+	width: 100%;
+	table-layout: fixed;
+	border: 1px solid #CDCDCD;
+	border-collapse: collapse;
+	margin-bottom: 1.5rem;
+}
+
+table thead th {
+	background: #CCCCCC;
+	text-align: left;
+}
+
+tr:nth-child(odd) {
+	background: #F1F1F1;
+}
+
+tr:nth-child(even) {
+	background: #FFFFFF;
+}
+
+blockquote {
+	border-left: 3px solid rgb(221,221,221);
+	font-style: italic;
+}
+
+blockquote {
+	padding-left: 20px;
+}
+
+blockquote .author {
+	text-align: right;
+}

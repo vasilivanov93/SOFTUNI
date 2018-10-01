@@ -1,0 +1,19 @@
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+
+p {
+	padding: 1em;
+}
+
+p:first-child a {
+	background: #008000;
+}
+
+p:last-child a {
+	background: #FF8C00;
+}
+a {
+	border-radius: 5px;
+	text-decoration: none;
+	color: #fff;
+	padding: 0.5em;
+}
