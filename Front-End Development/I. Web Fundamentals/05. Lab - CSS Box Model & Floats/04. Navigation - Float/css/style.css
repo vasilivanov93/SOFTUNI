@@ -12,7 +12,7 @@
 	clear: both;
 }
 
-body {
+.wrapper {
 	max-width: 980px;
 	margin: 40px auto;
 }
