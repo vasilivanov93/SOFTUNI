@@ -1,0 +1,60 @@
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Helvetica", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.wrapper {
+	max-width: 1180px;
+	margin: 50px auto;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid rgb(0,0,0);
+	padding-bottom: 15px;
+}
+
+header a {
+	text-decoration: none;
+}
+
+header .logo a {
+	font-size: 45px;
+	font-weight: bold;
+	color: #000;
+}
+
+header ul {
+	display: flex;
+	list-style-type: none;
+	text-transform: capitalize;
+	padding-left: 25px;
+	padding-top: 10px;
+}
+
+header ul li {
+	padding: 0 10px;
+}
+
+header ul li a {
+	color: rgb(0, 153, 0);
+}
+
+article h1 {
+	padding-top: 25px;
+}
+
+article p {
+	padding: 10px 0;
+}
