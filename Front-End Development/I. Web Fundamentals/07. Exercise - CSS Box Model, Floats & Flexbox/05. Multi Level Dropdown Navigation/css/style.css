@@ -1,0 +1,109 @@
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Helvetica", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+body {
+	background: rgb(238, 238, 238);
+	max-width: 1180px;
+	margin: 30px auto;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid #000;
+	padding-bottom: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.site-title {
+	font-size: 32px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	border-radius: 5px;
+}
+
+.nav ul {
+	display: flex;
+}
+
+.nav ul ul {
+	display: none;
+	position: absolute;
+}
+
+.nav ul li {
+	position: relative;
+    display: inline-block;
+	padding: 5px 10px;
+	margin: 0 5px;
+	border-radius: 5px;
+	background: #333; 
+	
+}
+
+.nav ul li a {
+	text-transform: capitalize;
+	color: #fff;
+}
+
+.nav ul li:hover {
+	background: #049B01;
+	color: #fff;
+}
+
+.nav ul li:hover ul {
+	display: block;
+	background: #fff;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.nav ul li:hover ul li {
+	display: flex;
+	align-items: center;
+	padding: 5px 52px 5px 10px;
+	margin: 8px;
+}
+
+.nav ul li:hover ul ul {
+	display: none;
+	position: absolute;
+	top: -13px;
+	right: 100%;
+}
+
+.nav ul li:hover > ul li:hover ul{
+	display: block;
+}
+
+.nav ul li:hover > ul li:hover ul li {
+	display: flex;
+	align-items: center;
+	padding: 5px 100px 5px 10px;
+	margin: 8px;
+}
