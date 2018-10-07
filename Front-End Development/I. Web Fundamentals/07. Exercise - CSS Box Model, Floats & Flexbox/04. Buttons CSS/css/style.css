@@ -1,0 +1,57 @@
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+
+html {
+	font-family: "Georgia", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+body {
+	background: rgb(238, 238, 238);
+}
+
+.wrapper {
+	max-width: 1180px;
+	margin: 30px auto;
+}
+
+h2 {
+	font-size: 32px;
+	text-transform: capitalize;
+}
+
+button {
+	text-transform: capitalize;
+	box-shadow: 0 0 0 0;
+	border-radius: 20px;
+	padding: 8px 14px;
+	margin-right: 10px;
+	outline: 0;
+	cursor: pointer;
+}
+
+.btn-normal {
+	border: 2px solid #333;
+	background: rgb(238, 238, 238);
+	color: #333;
+}
+
+.btn-normal:hover {
+	border: 2px solid #234C13;
+	background: rgb(255, 255, 255);
+	color: #234C13;
+}
+
+.btn-filled,
+.btn-icon {
+	border: none;
+	background: #333;
+	color: #fff;
+}
+
+.btn-filled:hover,
+.btn-icon:hover {
+	border: none;
+	background: #234C13;
+	color: #fff;
+}
