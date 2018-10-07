@@ -1,0 +1,47 @@
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+html {
+	font-family: "Helvetica", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.viewport:first-of-type {
+background: linear-gradient(to right, #185b9d 0%, #185b9d 0%, #42cda1 100%, #42cda1 100%); 
+}
+
+.viewport:last-of-type {
+background: linear-gradient(to right, #1e5799 0%, #a83278 0%, #d28212 100%, #d28212 100%, #d28212 100%, #d28212 100%); 
+}
+
+
+img {
+	height: 400px;
+}
+
+.viewport {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.card {
+	position: relative;
+}
+
+i {
+	position: absolute;
+	bottom: 4%;
+	right: 2%;
+	color: #fff;
+}
+
