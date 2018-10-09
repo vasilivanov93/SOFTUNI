@@ -1,0 +1,35 @@
+body {
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	border: 10px solid #000;
+	padding: 10px;
+}
+
+.gallery {
+ 	display: flex;
+ 	flex-wrap: wrap;
+ 	justify-content: center;
+}
+
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	  
+}
+
+ul li {
+	flex: 1 0 30%;
+	margin: 0 -10px;
+}
+
+li img {
+	margin: 0 10px;
+}
+
