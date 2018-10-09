@@ -1,0 +1,71 @@
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+
+html {
+	font-family: "Helvetica", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+form {
+	width: 25%;
+	border-radius: 5px;
+	margin: 30px;
+}
+
+fieldset {
+	border-radius: 5px;
+	background: #f9f9f9;
+}
+
+legend {
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 5px 60px 5px 10px;
+	background: #f9f9f9;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+	padding-left: 25px;
+	border-radius: 5px;
+	border: 1px solid #cfcfcf;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+	border: 1px solid #089C08;
+}
+
+input[type="text"]:focus + i,
+input[type="password"]:focus + i {
+	border: 1px solid #089C08;
+}
+
+.input-with-icon {
+	position: relative;
+	padding: 10px 0;
+}
+
+i {
+	position: absolute;
+	top: 41px;
+	left: 10px;
+}
+
+.login {
+	position: relative;
+	border: 1px solid #777;
+	background: #f9f9f9;
+	border-radius: 5px;
+	width: 8%;
+	margin-left: -24px;
+	padding-left: 10px;
+	left: 56px;
+	top: 42px;
+}
+
