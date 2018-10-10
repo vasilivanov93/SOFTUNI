@@ -1,0 +1,97 @@
+@import url('reset.css');
+@import url('typography.css');
+
+html {
+	font-family: "Helvetica", sans-serif;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+body {
+	background: #EBEBEB;
+	padding: 1rem 2rem;
+}
+
+img {
+	border: 3px solid #000;
+	box-shadow: 0 0 42px 2px rgba(0, 0, 0, 0.25);
+	padding: 0.5rem;
+	background: #fff;
+}
+
+.clearfix {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.site-title {
+	font-size: 36px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.header {
+	border-bottom: 1px solid #000;
+}
+
+.section p {
+	font-size: 1.2rem;
+}
+
+.img-container-right {
+	float: right;
+	padding-left: 1rem;
+}
+
+.col1of2 {
+	float: left;
+	width: 50%;
+}
+
+.img-container-left {
+	float: left;
+	padding-right: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+	html {
+		font-size: 14px;
+	}
+
+	.img-container-left,
+	.img-container-right,
+	.col1of2 {
+		float: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	html {
+		font-size: 16px;
+	}
+
+	.img-container-left,
+	.img-container-right,
+	.col1of2 {
+		float: none;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	html {
+		font-size: 21px;
+	}
+}
+
+@media screen and (max-width: 1800px) {
+	html {
+		font-size: 23px;
+	}
+}
