@@ -64,78 +64,100 @@ nav {
 	color: #fff;
 }
 
-.nav li:hover {
-	background: #049B01;
-	color: #fff;
-}
-
-.nav li:hover ul {
-	display: block;
-	background: #fff;
-	border-radius: 0.3rem;
-	margin-top: 0.3rem;
-}
-
-.nav li:hover ul li {
-	display: flex;
-	align-items: center;
-	width: 10vw;
-	margin: 0.6rem;
-}
-
-.nav li:hover ul ul {
-	display: none;
-	position: absolute;
-	top: -0.9rem;
-	right: 100%;
-}
-
-.nav li:hover > ul li:hover ul{
-	display: block;
-}
-
-.nav li:hover > ul li:hover ul li {
-	display: flex;
-	align-items: center;
-	width: 10vw;
-	margin: 0.6rem;
-}
-
-.checkbox {
+#checkbox {
 	display: none;
 }
 
-.checkbox:checked + header .nav ul {
+#checkbox:checked + header .nav {
 	display: block;
 	flex: 1 0 100%;
-	background: red;
+}
+
+@media screen and (max-width: 800px) { /* phone and tablet */
+	.site-title {
+		flex: 1 0 100%;
+	}
+
+	.nav {
+		display: none;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+		border-radius: 0;
+	}
+
+	.header {
+		flex-wrap: wrap;
+		text-align: center;
+		justify-content: center;
+		border: none;
+	}
+
+	.nav ul {
+		flex-direction: column;
+	}
+
+	.nav ul li {
+		margin: 0.1rem 0;
+		position: relative;
+	}
+
+	.nav ul ul {
+		display: flex;
+		flex-wrap: wrap;
+		width: auto;
+		position: static;
+	}
+
+	.nav ul ul li {
+		background: #666;
+		color: #fff;
+	}
+
+	.nav ul ul ul li {
+		background: #CCC;
+		color: #fff;
+	}
 }
 
 @media screen and (min-width: 800px) {
 	.toggle {
 		display: none;
 	}
-}
 
-
-@media screen and (max-width: 800px) {
-	.nav {
-		display: none;
-	}
-
-	.toggle {
-		font-size: 0.6rem;
-		border-radius: 0.4rem;
-		padding: 0.6rem 1rem;
-		background: #2D2D2D;
+	.nav li:hover {
+		background: #049B01;
 		color: #fff;
 	}
 
-	#checkbox {
-		display: none;
+	.nav li:hover ul {
+		display: block;
+		background: #fff;
+		border-radius: 0.3rem;
+		margin-top: 0.3rem;
 	}
 
-	.#checkbox:checked + header .nav {
+	.nav li:hover ul li {
+		display: flex;
+		align-items: center;
+		width: 10vw;
+		margin: 0.6rem;
+	}
+
+	.nav li:hover ul ul {
+		display: none;
+		position: absolute;
+		top: -0.9rem;
+		right: 100%;
+	}
+
+	.nav li:hover > ul li:hover ul{
 		display: block;
+	}
+
+	.nav li:hover > ul li:hover ul li {
+		display: flex;
+		align-items: center;
+		width: 10vw;
+		margin: 0.6rem;
 	}
 }
