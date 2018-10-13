@@ -1,0 +1,49 @@
+@import url('reset.css');
+@import url('typography.css');
+
+body {
+	background: #EBEBEB;
+	padding: 1rem 2rem;
+}
+
+img {
+	border: 3px solid #000;
+	box-shadow: 0 0 42px 2px rgba(0, 0, 0, 0.25);
+	padding: 0.5rem;
+	background: #fff;
+}
+
+.clearfix {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.site-title {
+	font-size: 36px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.header {
+	border-bottom: 1px solid #000;
+}
+
+.section p {
+	font-size: 1.2rem;
+}
+
+.img-container-right {
+	float: right;
+	padding-left: 1rem;
+}
+
+.col1of2 {
+	float: left;
+	width: 50%;
+}
+
+.img-container-left {
+	float: left;
+	padding-right: 1rem;
+}
