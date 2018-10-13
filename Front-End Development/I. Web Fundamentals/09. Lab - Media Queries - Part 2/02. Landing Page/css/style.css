@@ -1,0 +1,160 @@
+@import url("reset.css");
+@import url("typography.css");
+@import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
+
+body {
+	background: #FAFAFA;
+}
+
+a {
+	text-decoration: none;
+}
+
+.shell {
+	padding: 0.5rem 8rem;
+}
+
+.btn {
+	border: 1px solid #000;
+	border-radius: 0.2rem;
+	padding: 0.5rem 1rem;
+	background: #fff;
+}
+
+header .shell {
+	display: flex;
+	justify-content: space-between;
+	align-items: center; 
+}
+
+header .nav ul {
+	display: flex;
+}
+
+header .nav ul li,
+footer .nav ul li {
+	list-style-type: none;
+}
+
+header .nav ul li:first-letter {
+	text-transform: uppercase;
+}
+
+header .nav ul li:not(:last-child) {
+	padding-right: 2rem;
+}
+
+header .nav ul li a,
+footer .nav ul li a {
+	color: #000;
+}
+
+main .section-services .shell {
+	display: flex;
+}
+
+main .section-services .shell .content {
+	flex: 0 0 60%;
+	padding-right: 2rem;
+}
+
+main .section-services .shell .img-container {
+	flex: 0 0 20%;
+}
+
+main .section-team .shell,
+main .section-testimonials .shell {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main .section-team .shell h2,
+main .section-testimonials .shell h2,
+main .section-sign-up h2 {
+	flex: 1 0 100%;
+	text-align: center;
+	padding-bottom: 1rem;
+	position: relative;
+}
+
+main .section-team .shell h2:before,
+main .section-testimonials .shell h2:before,
+main .section-sign-up h2:before {
+	content: "";
+	position: absolute;
+	width: 10%;
+    height: 1px;
+    bottom: 0;
+    left: 45%;
+	border-bottom: 2px solid #000;
+}
+
+main .section-team .shell .employee,
+main .section-testimonials .shell .employee {
+	flex: 1 0 30%;
+	text-align: center;
+}
+
+.employee .img-container {
+	padding-bottom: 1rem;
+}
+
+.employee .name {
+	font-weight: bold;
+	padding-bottom: 0.1rem;
+}
+
+.employee .presentation {
+	font-style: italic;
+}
+
+main .section-sign-up {
+	background: #68347B;
+	text-align: center;
+}
+
+main .section-sign-up {
+	padding: 2rem 0;
+	padding-top: 0.5rem;
+}
+
+main .section-sign-up input[type="text"] {
+	width: 20rem;
+	padding: 0.5rem;
+	border: 1px solid #000;
+	border-radius: 0.2rem;
+}
+
+main .section-testimonials .shell .employee {
+	padding: 0 1rem; 
+}
+
+footer .shell {
+	display: flex;
+	height: 100px;
+}
+
+footer .shell .col {
+	padding-right: 2rem;
+}
+
+footer .shell .col:nth-child(1) {
+	flex: 1 0 30%;
+}
+
+footer .shell .col:nth-child(2) {
+	flex: 1 0 40%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+footer .shell .col:nth-child(2) h4 {
+	padding-left: 1.5rem;
+	flex: 1 0 100%;
+}
+
+footer .shell .col:nth-child(3) {
+	flex: 1 0 30%;
+	justify-content: flex-start;
+}
