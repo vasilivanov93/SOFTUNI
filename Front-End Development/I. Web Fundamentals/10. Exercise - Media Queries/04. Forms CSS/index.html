@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Responsive Forms</title>
+	<link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+	<form action="#/login" method="post" class="form">
+		<fieldset>
+			<legend>Login</legend>
+
+			<p class="field">
+				<label for="username">Username</label>
+				<span class="input">
+					<input type="text" name="username" id="username" />
+					<span class="actions"></span>
+					<i class="fas fa-user"></i>
+				</span>
+			</p><!-- /.field -->
+			
+			<p class="field">
+				<label for="password">Password</label>
+				<span class="input">
+					<input type="password" name="password" id="password" />
+					<span class="actions"></span>
+					<i class="fas fa-key"></i>
+				</span>
+			</p><!-- /.field -->
+
+			<input type="submit" value="Login" />
+		</fieldset>
+	</form><!-- /.form -->
+</body>
+</html>
