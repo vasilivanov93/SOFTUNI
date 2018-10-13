@@ -1,0 +1,25 @@
+@import url("reset.css");
+
+body {
+	padding: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+	.section p:after {
+		color: #035B02;
+	}
+	.section-wq p:after {
+		content: ' Viewport width is larger than 600px';
+	}
+
+	.section-hq p:after {
+		content: ' Viewport height is larger than 600px';
+	}
+}
+
+@media screen and (min-width: 768px),
+(min-height: 480px) {
+		.section-rq p:after {
+		content: ' Aspect Ratio is larger than 8/5';
+	}
+}
