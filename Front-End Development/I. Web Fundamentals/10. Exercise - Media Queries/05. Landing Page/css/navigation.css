@@ -1,0 +1,169 @@
+header .shell {
+	display: flex;
+	justify-content: space-between;
+	align-items: center; 
+}
+
+header .nav ul {
+	display: flex;
+}
+
+header .nav ul li,
+footer .nav ul li {
+	list-style-type: none;
+}
+
+header .nav ul li:first-letter {
+	text-transform: uppercase;
+}
+
+header .nav ul li:not(:last-child) {
+	padding-right: 2rem;
+}
+
+header .nav ul li a,
+footer .nav ul li a {
+	color: #000;
+}
+
+#checkbox {
+	display: none;
+}
+
+#checkbox:checked + header .nav {
+	display: block;
+	flex: 1 0 100%;
+}
+
+@media screen and (max-width: 800px) { /* phone and tablet */
+	.toggle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+				font-size: 2.3rem;
+	}
+	.container {
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	.bar1, .bar2, .bar3 {
+	    width: 35px;
+	    height: 5px;
+	    background-color: #333;
+	    margin: 6px 0;
+	    transition: 0.4s;
+	}
+
+	/* Rotate first bar */
+	.change .bar1 {
+	    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+	    transform: rotate(-45deg) translate(-9px, 6px) ;
+	}
+
+	/* Fade out the second bar */
+	.change .bar2 {
+	    opacity: 0;
+	}
+
+	/* Rotate last bar */
+	.change .bar3 {
+	    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+	    transform: rotate(45deg) translate(-8px, -8px) ;
+	}
+
+	header .shell {
+		display: flex;
+		justify-content: space-between;
+		align-items: center; 
+		flex-wrap: wrap;
+	}
+
+	.header .nav {
+		display: none;
+		border-top: 1px solid #68347B;
+		border-bottom: 1px solid #68347B;
+		border-radius: 0;
+		padding-top: 1rem;
+	}
+
+	.header {
+		flex-wrap: wrap;
+		justify-content: center;
+		border: none;
+	}
+
+	.header .nav ul {
+		flex-direction: column;
+	}
+
+	.header .nav ul li {
+		margin: 0.1rem 0;
+		position: relative;
+		text-align: center;
+	}
+
+	header .nav ul li {
+		padding-right: 2rem;
+	}
+
+	.header .nav ul ul {
+		display: flex;
+		flex-wrap: wrap;
+		width: auto;
+		position: static;
+	}
+
+	.header .nav ul ul li {
+		background: #666;
+		color: #fff;
+	}
+
+	.header .nav ul ul ul li {
+		background: #CCC;
+		color: #fff;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.header .toggle {
+		display: none;
+	}
+
+	.header .nav li:hover {
+		background: #049B01;
+		color: #fff;
+	}
+
+	.header .nav li:hover ul {
+		display: block;
+		background: #fff;
+		border-radius: 0.3rem;
+		margin-top: 0.3rem;
+	}
+
+	.header .nav li:hover ul li {
+		display: flex;
+		align-items: center;
+		width: 10vw;
+		margin: 0.6rem;
+	}
+
+	.header .nav li:hover ul ul {
+		display: none;
+		position: absolute;
+		top: -0.9rem;
+		right: 100%;
+	}
+
+	.header .nav li:hover > ul li:hover ul{
+		display: block;
+	}
+
+	.header .nav li:hover > ul li:hover ul li {
+		display: flex;
+		align-items: center;
+		width: 10vw;
+		margin: 0.6rem;
+	}
+}

@@ -1,5 +1,6 @@
 @import url("reset.css");
 @import url("typography.css");
+@import url("navigation.css");
 @import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
 
 body {
@@ -19,34 +20,6 @@ a {
 	border-radius: 0.2rem;
 	padding: 0.5rem 1rem;
 	background: #fff;
-}
-
-header .shell {
-	display: flex;
-	justify-content: space-between;
-	align-items: center; 
-}
-
-header .nav ul {
-	display: flex;
-}
-
-header .nav ul li,
-footer .nav ul li {
-	list-style-type: none;
-}
-
-header .nav ul li:first-letter {
-	text-transform: uppercase;
-}
-
-header .nav ul li:not(:last-child) {
-	padding-right: 2rem;
-}
-
-header .nav ul li a,
-footer .nav ul li a {
-	color: #000;
 }
 
 main .section-services .shell {

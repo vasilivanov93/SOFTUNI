@@ -7,11 +7,22 @@
 </head>
 <body>
 <div class="wrapper">
+	<input type="checkbox" id="checkbox" />
+
 	<header class="header">
 		<div class="shell">
 			<div class="logo">
 				<img src="images/logo.png" alt="logo" />
 			</div><!-- /.logo -->
+
+			<label for="checkbox" class="toggle" onclick="myFunction(this)">
+				<div class="container">
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
+				</div><!-- /.container -->
+				<div>Menu</div>
+			</label>
 
 			<nav class="nav">
 				<ul>
@@ -226,5 +237,11 @@
 		</div><!-- /.shell -->
 	</footer><!-- /.footer -->
 </div><!-- /.wrapper -->
+
+<script>
+	function myFunction(x) {
+	    x.classList.toggle("change");
+	}
+</script>
 </body>
 </html>
