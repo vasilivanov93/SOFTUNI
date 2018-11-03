@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+@import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	background-image: url("../images/background-header.jpg");
+	background-size: cover;
+}
+
+header .img-container {
+	flex: 1 0 100%;
+	padding: 1rem 0 1rem 2rem;
+}
+
+header .img-container span img {
+	width: 20%;
+}
+
+header .content-header {
+	flex: 1 0 100%;
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+header .content-header h2 {
+	font-weight: 100;
+	padding-bottom: 0.5rem;
+}
+
+header .content-header h1 {
+	font-weight: 900;
+	padding-bottom: 1.5rem;
+}
+
+header .content-header p {
+	font-style: italic;
+	font-size: 1.6rem;
+	color: #2E2A2A;
+	padding-bottom: 3rem;
+}
+
+header .btn-container {
+	padding-bottom: 5rem;
+}
+
+header .btn {
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 1rem;
+	margin: 0 0.5rem;
+	color: #fff;
+}
+
+header .btn--learn-more {
+	background: #332E62;
+}
+
+header .btn--download {
+	background: #F42257;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+main .article {
+	flex: 1 0 30%;
+	padding: 5rem 0;
+}
+
+main .article .container {
+	border: 2px solid #C17F3F;
+	width: 60px;
+	height: 60px;
+	display: block;
+	margin: 0 auto;
+	padding: 6px;
+	border-radius: 50%;
+	padding: 6px;
+}
+
+main .article i {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: #fff;
+	border-radius: 50%;
+	line-height: calc(60px - 16px);
+	font-size: 24px;
+	color: #C17F3F;
+}
+
+main .article h4 {
+	font-style: italic;
+	font-weight: 900;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+footer {
+	display: flex;
+	flex-wrap: wrap;
+	background-image: url("../images/moon.jpg");
+	background-size: cover;
+}
+
+footer .footer-content {
+	flex: 0 0 30%;
+	border: 1px solid #C88841;
+	padding: 3rem 1rem;
+	margin-left: 5rem;
+	text-align: center;
+	color: #fff;
+}
+
+footer .footer-content h4 {
+	padding-bottom: 1.5rem;
+	font-size: 1.5rem;
+	font-style: italic;
+}
+
+footer .footer-content h6 {
+	padding-bottom: 2rem;
+	font-size: 0.7rem;
+	font-style: italic;
+}
+
+footer .footer-content p {
+	font-size: 0.8rem;
+	padding-bottom: 3rem;
+}
+
+footer .footer-content .clients {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+footer .footer-content .clients .container {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	display: block;
+	text-align: center;
+	margin: 0 10px;
+	border-radius: 50%;
+	padding: 6px;
+	background: linear-gradient(to right, #ffa951 0%,#ffa951 41%,#ffa951 41%,#ffe058 100%,#207cca 100%);
+}
+
+footer .footer-content .clients .container span {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+	line-height: calc(60px - 12px);
+	color: #262626;
+	position: absolute;
+    top: 35px;
+    left: 2px;
+    color: #000;
+    font-size: 1.1rem;
+}
+
+footer .footer-bottom {
+	flex: 1 0 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3rem 0;
+} 
+
+footer .footer-bottom p {
+	color: #fff;
+	margin-left: 5rem;
+}
+
+footer .footer-bottom p > span {
+	color: #BD6A30;
+}
+
+footer .social-icons {
+	display: flex;
+	flex-wrap: wrap;
+	padding-right: 2rem;
+}
+
+footer .social-icons li {
+	list-style-type: none;
+}
+
+footer .social-icons li a {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	display: block;
+	text-align: center;
+	margin: 0 2px;
+	border-radius: 50%;
+	text-decoration: none;
+}
+
+footer .social-icons li a i {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+	line-height: calc(30px - 4px);
+	font-size: 16px;
+	color: #FFF;
+}
+
+
+footer .social-icons li:nth-child(1) a i {
+	border: 1px solid #3b5998;
+	color: #3b5998;
+}
+
+footer .social-icons li:nth-child(2) a i {
+	border: 1px solid #1da1f2;
+	color: #1da1f2;
+}
+
+footer .social-icons li:nth-child(3) a i {
+	border: 1px solid #c32aa3;
+	color: #c32aa3;
+}

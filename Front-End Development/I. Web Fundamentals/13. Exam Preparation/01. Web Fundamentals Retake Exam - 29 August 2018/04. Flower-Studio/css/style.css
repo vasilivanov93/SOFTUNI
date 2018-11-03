@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+@import url('https://use.fontawesome.com/releases/v5.4.2/css/all.css');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'PT Sans', sans-serif;
+	color: #867F7F;
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: #867F7F;
+}
+
+.shell {
+	max-width: 990px;
+	margin: 0 auto;
+}
+
+.header {
+	background: #FAFAFA;
+}
+
+.header .shell {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.header .shell .left {
+	flex: 1 0 50%;
+}
+
+.header .shell nav {
+	padding: 1.5rem 0;
+}
+
+.left ul,
+.right ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.left ul li:not(:last-child) {
+	padding-right: 1rem;
+}
+
+.right ul li:not(:last-child) {
+	padding-right: 0.5rem;
+}
+
+.right ul li:after {
+	content: ' | ';
+	color: #E0E0E0;
+}
+
+.left ul li a {
+	text-transform: uppercase;
+}
+
+.left ul li a:hover,
+.left ul li a:focus,
+.right ul li a:hover,
+.right ul li a:focus {
+	color: #FA5B3D;
+}
+
+.section-banner {
+	background-image: url("../images/residential-banner-2.jpg");
+	background-size: cover;
+	height: 14rem;	
+	text-align: center;
+	color: #fff;
+}
+
+.section-banner h1 {
+	padding-top: 2rem;
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.section-banner p {
+	padding: 0.5rem 0;
+}
+
+.section-services {
+	padding: 2rem 0;
+}
+
+.section-services .shell {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.section-services .article {
+	flex: 1 0 30%;
+}
+
+.section-services .article:not(:last-of-type) {
+	padding-right: 0.5rem;
+}
+
+.section-services .article > * {
+	padding-bottom: 0.5rem;
+}
+
+.section-services h4 {
+	flex: 1 0 100%;
+	color: #000;
+	font-size: 1.2rem;
+	padding-bottom: 1rem;
+}
+
+.section-services .article h2:before {
+	content: ' \2501 '
+}
+
+.section-services .article h2:after {
+	content: ' \2501 '
+}
+
+.section-gallery {
+	background: #EDEDED;
+	padding: 4rem 0;
+}
+
+footer {
+	background: #000;
+	padding: 1rem 0;
+}
+
+footer .shell {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.links {
+	flex: 1 0 70%;
+	position: relative;
+	padding-bottom: 1rem;
+}
+
+.links:after {
+	content: '';
+	position: absolute;
+	left: 0; bottom: 0;
+	width: 75%;
+	border-bottom: 1px solid #867F7F;
+}
+
+.links ul {
+	columns: 4;
+	text-align: center;
+}
+
+.links ul li {
+	padding: 0.2rem 0;
+}
+
+.links i {
+	padding-right: 0.5rem;
+	font-size: 0.6rem;
+}
+
+.links i.far {
+	background: #000;
+	color: #7D7D7D;
+}
+
+.links i.fas {
+	color: #fff;
+}
+
+.subscribe {
+	flex: 1 0 30%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding-top: 1.5rem;
+	padding-bottom: 1rem;
+}
+
+.subscribe h4 {
+	text-align: center;
+	padding-left: 0.2rem;
+}
+
+.subscribe input {
+	width: 70%;
+	margin: 0.2rem 0;
+	padding: 0.5rem 0.2rem;
+}
+
+.subscribe .btn {
+	width: 30%;
+	margin: 0.2rem 0;
+	padding: 0.5rem 0.2rem;
+	background: #EA5538;
+	color: #fff;
+	border: none;
+}
+
+.social {
+	flex: 1 0 100%;
+}
+
+.social {
+	padding: 1rem 0;
+	padding-top: 3rem;
+}
+
+.social ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.social ul li:not(:last-of-type) {
+	padding: 0 0.1rem;
+}
+
+.social ul li:not(:last-of-type) a:after {
+	content: ' | ';
+}

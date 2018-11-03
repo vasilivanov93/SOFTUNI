@@ -1,0 +1,79 @@
+@media all and (max-width: 1028px) {
+	#main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#main aside {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+/*		justify-content: space-between;*/
+	}
+
+	main {
+		width: 100%;
+	}
+
+	aside img,
+	aside #personal-info {
+		flex: 1 0 50%;
+		background: #FCFCFC;
+
+		
+	}
+
+	aside #personal-info hr {
+		display: none;
+	}
+
+	aside img {
+		max-width: 25%;
+		border-radius: 50%;
+		overflow: hidden;
+		padding: 1rem 3.5rem;
+	}
+
+	aside #skills,
+	aside #languages {
+		flex: 1 0 100%;
+	}
+
+	#education {
+		margin-bottom: 1rem;
+	}
+}
+
+@media all and (max-width: 768px) {
+	#main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#main aside {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	main {
+		width: 100%;
+	}
+
+	aside img,
+	aside #personal-info,
+	aside #skills,
+	aside #languages {
+		flex: 1 0 100%;
+	}
+
+	aside img {
+		max-width: 90%;
+		border-radius: 0;
+		padding: 0;
+		margin-top: 1rem;
+	}
+}

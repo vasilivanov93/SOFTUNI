@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha');
+@import url('https://use.fontawesome.com/releases/v5.4.1/css/all.css');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+body {
+	font-family: 'Neucha', cursive;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.logo--social-icons {
+	text-align: center;
+}
+
+.logo {
+	width: 150px;
+	height: 150px;
+	position: relative;
+}
+
+.social-icons {
+	float: right;
+	position: absolute;
+	right: 0.5rem; top: 0.5rem;
+}
+
+.social-icons li a {
+	color: #000;
+}
+
+.header {
+	background-image: url("../images/background.jpg");
+	background-size: cover;
+	height: auto;
+}
+
+.nav {
+	padding: 2rem 0;
+}
+
+.nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.nav ul li {
+	padding-left: 3.5rem;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+.nav ul li a {
+	color: #fff;
+}
+
+.heading {
+	padding-top: 6rem;
+	padding-bottom: 12rem;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.main .shell {
+	padding: 0 20rem;
+	margin: 0 auto;
+}
+
+.secton-services {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.secton-services h2 {
+	flex: 1 0 100%;
+	font-size: 2.5rem;
+	text-transform: capitalize;
+	padding-bottom: 0.5rem;
+}
+
+.secton-services p {
+	flex: 1 0 100%;
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding-bottom: 2rem;
+}
+
+.secton-services article {
+	flex: 1 0 30%;
+	padding-bottom: 2rem;
+}
+
+.secton-services article:not(:last-of-type) {
+	padding-right: 1rem;
+}
+
+.secton-services article img {
+	width: 100px;
+	height: 100px;
+}
+
+.secton-services article h4 {
+	padding-bottom: 1.5rem;
+}
+
+.secton-services article p {
+	font-size: 0.8rem;
+}
+
+.secton-services article .btn {
+	padding: 0.5rem 1rem;
+	background: #8AD7E9;
+	color: #fff;
+	border: none;
+}
+
+.section-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 4rem;
+}
+
+.section-gallery img {
+	flex: 1 0 30%;
+	width: 150px;
+	height: 250px;
+}
+
+footer {
+	text-align: center;
+	background: #82CA9C;
+	color: #fff;
+}
+
+footer h3 {
+	text-transform: capitalize;
+	font-size: 1.5rem;
+	padding: 1rem 0 1.5rem 0;
+}
+
+footer p {
+	font-size: 1.2rem;
+	padding-bottom: 2rem;
+}

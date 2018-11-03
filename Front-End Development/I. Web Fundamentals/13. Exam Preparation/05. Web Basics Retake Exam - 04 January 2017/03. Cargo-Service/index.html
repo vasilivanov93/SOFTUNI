@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Cargo Service</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<form class="form">
+		<h1 class="full-width">Basic calculated fields sample.</h1>
+
+		<div class="container full-width">
+			<label for="distance">Distance (mi) *</label>
+
+			<input type="text" id="distance" placeholder="Enter Distance" />
+		</div><!-- /.container -->
+
+		<div class="container half-width">
+			<label for="weight">Weight (lb)</label>
+
+			<input type="text" id="weight" placeholder="Enter Weight" />
+		</div><!-- /.container -->
+
+		<div class="container half-width not">
+			<label for="option">Fragile</label>
+			<select id="option">
+				<option>No</option>
+				<option>Yes</option>
+			</select>
+		</div><!-- /.container -->
+
+		<div class="container third-width">
+			<label for="length">Length (in)</label>
+
+			<input type="text" id="length" placeholder="Length" />
+		</div><!-- /.container -->
+
+		<div class="container third-width">
+			<label for="height">Height (in)</label>
+
+			<input type="text" id="height" placeholder="Height" />
+		</div><!-- /.container -->
+
+		<div class="container third-width not">
+			<label for="width">Width (in)</label>
+
+			<input type="text" id="width" placeholder="Width" />
+		</div><!-- /.container -->
+
+		<div class="container extra-services full-width">
+			<label>Extra services:</label>
+			
+			<div class="radio">
+				<input type="radio" id="insurance" checked="" />
+				<label for="insurance">Insurance</label>
+			</div><!-- /.radio -->
+			
+			<div class="radio">
+				<input type="radio" id="delivery" />
+				<label for="delivery">Express Delivery</label>
+			</div><!-- /.radio -->
+		</div><!-- /.container -->
+
+		<div class="container full-width end">
+			<label class="total">Total:</label>
+
+			<label class="total-price">$00.00<label>
+		</div><!-- /.container -->
+	</form><!-- /.form -->
+</body>
+</html>

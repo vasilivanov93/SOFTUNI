@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+@import url('https://use.fontawesome.com/releases/v5.4.2/css/all.css');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.5;
+	color: #080808;
+	text-transform: uppercase;
+	padding: 1rem 25rem;
+	margin: 0 auto;
+}
+
+h1 { 
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+form .container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 0.5rem 0;
+}
+
+form .full-width {
+	flex: 1 0 100%;
+}
+
+form .half-width {
+	flex: 1 0 50%;
+}
+
+form .third-width {
+	flex: 1 0 30%;
+}
+
+form .half-width:not(.not),
+form .third-width:not(.not) {
+	padding-right: 1.5rem;
+}
+
+form .third-width input {
+	width: 100%;
+}
+
+form .extra-services {
+	flex-direction: row;
+	padding: 1.5rem 0;
+}
+
+form .end {
+	flex-direction: row;
+	justify-content: space-between;
+	border-top: 1px solid #EFEFEF;
+	border-bottom: 1px solid #EFEFEF;
+}
+
+.container.full-width:first-of-type {
+	padding-top: 3rem;
+}
+
+form h1 {
+	position: relative;
+	font-size: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 3px solid #F2F2F2;
+}
+
+form h1:after {
+	content: '';
+	position: absolute;
+	width: 15%;
+	left: 0; bottom: -0.2rem;
+	border-bottom: 3px solid #FCA900;
+}
+
+.container label,
+.container input,
+.container select {
+	padding: 0.5rem 0;
+}
+
+.container input,
+.container select {
+	padding-left: 1rem;
+	color: #909090;
+	border: 1px solid #EFEFEF;
+}
+
+.container input:focus,
+.container select:focus {
+	border: 1px solid #FCA900;
+}
+
+.container .radio {
+	text-transform: capitalize;
+	padding-top: 0.5rem;
+	padding-left: 2.5rem;
+}
+
+.container .radio:last-of-type {
+	padding-left: 4.5rem;
+}
+
+.container .radio input {
+	margin-right: 0.5rem;
+}
+
+input[type='radio']:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #FFF;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #ffa500;
+}
+
+input[type='radio']:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #FCA900;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.end .total,
+.end .total-price {
+	font-size: 1.2rem;
+}

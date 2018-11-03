@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: #8A8585;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 2.0rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.6rem; }
+h5 { font-size: 1.4rem; }
+h6 { font-size: 1.2rem; }
+
+.shell {
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+.btn {
+	padding: 0.5rem 1.5rem;
+	border-radius: 0.5rem;
+	border: none;
+	color: #fff;
+	background: #FF4514;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+.header {
+	background-image: url("../images/bg-01-1920x908.jpg");
+	background-size: cover;
+}
+
+.header .shell .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 3rem;
+}
+
+.header .shell .content {
+	padding-top: 7rem ;
+	padding-bottom: 7rem;
+	text-align: center;
+	color: #fff;
+}
+
+.header .shell .content h1 {
+	text-transform: uppercase;
+	padding-bottom: 5rem;
+	font-weight: 300;
+	letter-spacing: 0.2rem;
+}
+
+.header .shell .content p {
+	font-size: 1.4rem;
+	padding-bottom: 3rem;
+}
+
+.btn--buy-ticket,
+.btn--watch-video {
+	padding: 0.5rem 2.5rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.btn--buy-ticket {
+	margin-right: 3rem;
+}
+
+.btn:hover,
+.btn:focus {
+	border: 2px solid #FF4514;
+	background: none;
+}
+
+.section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	padding-bottom: 2rem;
+}
+
+.section h2,
+.section h6,
+.section h3 {
+	color: #000;
+}
+
+.section h2,
+.section > p {
+	flex: 1 0 100%;
+	padding: 2rem 0;
+}
+
+.section > p {
+	padding: 0;
+	padding-bottom: 2rem;
+}
+
+.section article {
+	flex: 0 0 30%;
+}
+
+.section img {
+	padding-bottom: 1rem;
+}
+
+.section h4,
+.section h6,
+.section h3 {
+	padding-bottom: 1rem;
+}
+
+.section-team img {
+	border-radius: 50%;
+	padding: 0.5rem; 
+}
+
+.section-team h3 {
+	font-size: 1.4rem;
+}
+
+.section-team h4 {
+	color: #FF5F27;
+	font-size: 1.2rem;
+}
+
+.footer {
+	background: #191919;
+	padding: 2rem 0;
+}
+
+.footer .shell {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.footer .img-container {
+	flex: 1 0 100%;
+	padding-bottom: 2rem;
+}
+
+.footer ul {
+	font-size: 0.8rem;
+	flex: 0 0 30%;
+}
+
+.footer ul li {
+	list-style-type: none;
+}
+
+.footer h6 {
+	font-style: italic;
+	padding: 1rem 0;
+	color: #fff;
+	font-size: 0.8rem;
+}
+
+.footer h6:first-of-type {
+	padding-top: 0;
+}
+
+.people-say {
+	flex: 0 0 70%;
+	color: #fff;
+}
+
+.people-say h3 {
+	text-transform: uppercase;
+	padding-bottom: 1rem;
+}
+
+.people-say p > span {
+	padding-left: 45rem;
+	color: grey;
+}
+
+.privacy-polity {
+	flex: 1 0 100%;
+	text-align: center;
+	padding-top: 1rem;
+}

@@ -1,0 +1,74 @@
+@media all and (max-width: 480px) {
+	body {
+		background-image: none;
+		padding-top: 0;
+		position: relative;
+	}
+
+	header {
+		background: url(images/bg.jpg);
+		background-size: cover;
+		padding-bottom: 8rem;
+	}
+
+	header .logo{
+		margin: 0;
+		padding-top: 6rem;
+	}
+
+	main {
+		position: absolute;
+		top: 12rem;
+		left: 0;
+		right: 0;
+	}
+
+	.wrapper.style1 {
+		padding: 0;
+	}
+
+	.wrapper.style1 .content {
+		padding: 1rem 2rem;
+		color: #B2B2B2;
+	}
+
+	.wrapper.style2 {
+		padding: 1rem 2rem; 
+	}
+
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.gallery div {
+		flex: 1 0 100%;
+	}
+
+	.wrapper {
+		padding: 1rem 2rem;
+	}
+
+	.spotlight {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.spotlight img {
+		flex: 1 0 100%;
+	}
+
+	.spotlight .inner {
+		flex: 1 0 100%;
+		padding: 0;
+		text-align: center;
+		color: #B2B2B2;
+		padding-bottom: 1rem;
+	}
+
+	footer {
+		position: absolute;
+		top: 219rem;
+		left: 0; right: 0;
+	}
+}

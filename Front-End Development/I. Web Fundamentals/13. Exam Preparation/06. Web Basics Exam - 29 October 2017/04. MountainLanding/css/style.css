@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+}
+
+h1 { font-size: 2.0rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 0.8rem; }
+h6 { font-size: 0.6rem; }
+
+h2 {
+	text-transform: uppercase;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	font-weight: 400;
+	padding-bottom: 0.5rem;
+	color: #000;
+}
+
+p.italic {
+	font-style: italic;
+}
+
+img {
+	width: 100%;
+}
+
+header {
+	background-image: url("../images/header.jpg");
+	background-size: cover;
+}
+
+header .shell {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 18rem;
+	margin: 0 auto;
+}
+
+header .shell .nav ul {
+	display: flex;
+}
+
+header .shell .nav ul li {
+	list-style-type: none;
+}
+
+header .shell .nav ul li:not(:last-child) {
+	padding-right: 1.5rem;
+}
+
+header .shell .nav ul li a {
+	text-transform: capitalize;
+	text-decoration: none;
+	color: #fff;
+}
+
+header .shell .content {
+	padding: 1rem 10rem;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 2.5rem;
+}
+
+header .shell .content h1 {
+	color: #fff;
+	font-weight: bold;
+	padding-bottom: 1rem;
+}
+
+header .shell .content p {
+	color: #BCBABA;
+	padding-bottom: 1rem;
+}
+
+header .shell .content input {
+	border: none;
+	background: #CABC9A;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 0.5rem 1.5rem;
+	border-radius: 0.1rem;
+}
+
+main .section {
+	text-align: center;
+	color: #CDCCCB;
+}
+
+main .section--about-us .shell{
+	padding: 3rem 12rem;
+	margin: 0 auto;
+}
+
+main .section--about-us .shell p:not(:first-child) {
+	padding-bottom: 1.5rem;
+}
+
+main .section-services {
+	background: #F6F6F6;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3rem 0;
+}
+
+main .section-services .article {
+	flex: 1 0 30%;
+	padding-bottom: 2rem;
+
+}
+
+main .section-services .article .img-container {
+	width: 20%;
+	margin: 0 auto;
+}
+
+main .section-services .article h4 {
+	color: #4B5149;
+	padding-bottom: 1rem;
+}
+
+main .section-team {
+	padding: 3rem 6rem;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main .section-team h2,
+main .section-team p {
+	flex: 1 0 100%;
+}
+
+main .section-team .article {
+	flex: 1 0 25%;
+	padding: 1rem 2rem;
+}
+
+main .section-team .article h3 {
+	color: #86847C;
+	text-transform: uppercase;
+}
+
+main .section-team .article p {
+	text-transform: capitalize;
+}
+
+main .section-blog {
+	background: #F6F6F6;
+	padding: 3rem 4rem;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main .section-blog h2,
+main .section-blog p {
+	flex: 1 0 100%;
+}
+
+main .section-blog .article {
+	flex: 1 0 50%;
+	padding: 3rem 1.5rem;
+	display: flex;
+}
+
+main .section-blog .article .content {
+	background: #fff;
+	padding: 2rem 1rem;
+	text-align: left;
+}
+
+main .section-blog .article .content h3 {
+	text-transform: uppercase;
+	padding-bottom: 1rem;
+}

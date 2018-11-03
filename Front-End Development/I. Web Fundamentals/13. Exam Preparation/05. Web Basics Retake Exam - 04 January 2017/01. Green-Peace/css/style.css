@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	font-style: italic;
+	text-align: center;
+	line-height: 1.5;
+	position: absolute;
+	top: 50%; left: 0;
+	transform: translateY(-50%);
+	padding: 0 2rem;
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 2.0rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.6rem; }
+h5 { font-size: 1.4rem; }
+h6 { font-size: 1.2rem; }
+
+img { width: 100%; }
+
+.main {
+	background: #F3F3F3;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+}
+
+.main .article {
+	flex: 1 0 25%;
+	padding: 3rem 1rem;
+}
+
+.main .article .content {
+	background: #fff;
+	position: relative;
+}
+
+.main .article .content h2 {
+	font-size: 1.4rem;
+	padding-bottom: 1rem;
+}
+
+.main .article .content p {
+	padding-bottom: 2rem;
+	color: #B5A59D;
+}
+
+.main .article .content p:after {
+	content: "";
+	position: absolute;
+	width: 80%;
+    height: 1px;
+    bottom: 4rem;
+    left: 10%;
+	border-bottom: 2px solid #DE833B;
+}
+
+.main .article .content input {
+	border: none;
+	background: #fff;
+	text-transform: uppercase;
+	padding-bottom: 2rem;
+	color: #E68B74;
+}

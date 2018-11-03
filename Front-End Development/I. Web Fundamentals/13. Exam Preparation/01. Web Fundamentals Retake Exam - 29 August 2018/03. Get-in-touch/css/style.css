@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://use.fontawesome.com/releases/v5.4.2/css/all.css');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+img {
+	width: 50%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background: linear-gradient(rgba(132,106,221, 0.8), rgba(132,106,221, 0.8)), url('../images/bg-01.jpg'); 
+	background-size: cover;
+}
+
+h2 {
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	background: #fff;
+	border-radius: 1rem;
+	padding: 3rem;
+}
+
+main img,
+main form {
+	flex: 1 0 50%;
+}
+
+main img {
+	padding-top: 2.5rem;
+}
+
+main form {
+	padding: 0 2rem;
+}
+
+form h2 {
+	font-size: 1rem;
+	padding-bottom: 0.5rem;
+}
+
+form .container {
+	padding: 0.5rem 0;
+}
+
+.input {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.input input,
+.input textarea,
+.input .btn {
+	width: 100%;
+	padding: 0.7rem 0;
+	padding-right: 0.5rem;
+	padding-left: 2.5rem;
+	border: none;
+	border-radius: 1.5rem;
+	background-color: #E6E6E6;
+}
+
+.input textarea {
+	padding-left: 1.5rem;
+}
+
+.input i {
+	position: absolute;
+	left: 1rem;
+	top: 0.7rem;
+	color: #A8A8A8;
+	font-size: 0.8rem;e
+}
+
+.container input:focus + .actions + .fas {
+	color: #846ADD;
+}
+
+.input .btn {
+	padding-left: 0;
+	color: #fff;
+	background-color: #846ADD;
+	cursor: pointer;
+}
+
+.input .btn:hover,
+.input .btn:focus {
+	background-color: #333333;
+}

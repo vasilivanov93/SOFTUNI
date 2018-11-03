@@ -1,0 +1,120 @@
+@media screen and (max-width: 480px) {
+	.menu {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		width: auto;
+		padding: 1rem 0;
+	}
+
+	.menu span {
+		margin: 0 15rem 0 0;
+	}
+
+	.container {
+    	display: inline-block;
+    	cursor: pointer;
+    	padding-right: 2rem;
+	}
+
+	.bar1, .bar2, .bar3 {
+	    width: 35px;
+	    height: 5px;
+	    background-color: #333;
+	    margin: 6px 0;
+	    transition: 0.4s;
+	}
+
+	.change .bar1 {
+	    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	    transform: rotate(-45deg) translate(-9px, 6px);
+	}
+
+	.change .bar2 {opacity: 0;}
+
+	.change .bar3 {
+	    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+	    transform: rotate(45deg) translate(-8px, -8px);
+	}
+
+	ul.nav-options {
+		display: none;
+		text-align: center;
+		width: auto;
+	}
+
+	ul.nav-options li {
+		width: auto;
+	}
+	
+	.about-us {
+		width: auto;
+		padding: 2.5rem;
+	}
+
+	.about-us p {
+		width: auto;
+	}
+
+	.info {
+		margin: 1rem 2rem 0 2rem;
+	}
+
+	.info .headings{
+		margin-top: 1rem;
+		font-size: 20px;
+		width: auto
+	}
+
+	.info hr {
+		width: 30%
+	}
+
+	.paragraph {
+		width: auto;
+	}
+
+	.views {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.views img {
+		padding-bottom: 1rem;
+		width: 100%;
+	}
+
+	#second-heading {
+		padding: 0;
+		margin-top: 33rem;
+		width: auto;
+	}
+
+	.why-us {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.why-us .extras {
+		flex: 1 0 100%;
+	}
+
+	.final-section .headings {
+		width: auto;
+		margin-top: 1rem;
+		font-size: 22px;
+	}
+
+	.final-section hr {
+		width: 40%;
+	}
+
+	.our-team {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.our-team article {
+		margin: 0;
+	}
+}
