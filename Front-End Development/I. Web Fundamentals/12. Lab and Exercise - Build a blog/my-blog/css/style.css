@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i");
+@import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background: #EEE;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 1em;
+	line-height: 1.2;
+	margin: 1em 0 0.5em 0;
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.6em; }
+h5 { font-size: 1.4em; }
+h6 { font-size: 1.2em; }
+
+p { padding-bottom: 0.5rem; }
+
+ul li, ol li {
+	list-style-position: inside;
+}
+
+.shell {
+	padding: 2rem 1rem;
+}
+
+.top {
+	background: #3c2520;
+}
+
+.top .shell {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap; 
+	align-items: center;
+}
+
+.nav-top {
+	padding: 0;
+	margin: 0;
+}
+
+.nav-top ul,
+.social-icons {
+	display: flex;
+}
+
+.nav-top ul li,
+.social-icons li {
+	list-style-type: none;
+}
+
+.nav-top ul li a {
+	color: #999;
+	text-decoration: none;
+	text-transform: capitalize;
+	padding-right: 0.3rem;
+}
+
+.nav-top ul li a:after {
+	content: "|"
+}
+
+.top .shell .social-icons {
+	display: flex;
+}
+
+.social-icons li a {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	margin: 0 10px;
+	border-radius: 50%;
+	padding: 5px;
+	background: #957964;
+	color: #fff;
+	font-size: 0.8rem;
+}
+
+.social-icons li:nth-child(1) a:hover {
+	background: #3b5998;
+}
+
+.social-icons li:nth-child(2) a:hover {
+	background: #1da1f2;
+}
+
+.social-icons li:nth-child(3) a:hover {
+	background: #db4437;
+}
+
+.social-icons li:nth-child(4) a:hover {
+	background: #007bb5;
+}
+
+.social-icons li:nth-child(5) a:hover {
+	background: #c32aa3;
+}
+
+
+.header .shell {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.header .shell .logo {
+	flex: 1 0 50%;
+}
+
+.header .shell .search {
+	flex: 1 0 50%;
+	text-align: right;
+}
+
+.search input {
+	padding: 0.5rem;
+}
+
+.search p {
+	color: #999;
+}
+
+.logo, 
+.search {
+	padding-bottom: 1.5rem;
+}
+
+input[type='text'] {
+	width: 15rem;
+}
+
+input[type='submit'] {
+	background: #3c2520;
+	color: #fff;
+	text-transform: uppercase;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	margin-left: -0.5rem;
+	border: none;
+	padding: 0.6rem 0.5rem;
+}
+
+.header .shell .nav {
+	flex: 1 0 100%;
+}
+
+header .nav ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem 0; 
+}
+
+header .nav ul li {
+	list-style-type: none;
+}
+
+header .nav ul li:first-child {
+	border-top-left-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+}
+
+header .nav ul li:last-child {
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+
+header .nav ul li {
+	text-transform: capitalize;
+	padding: 0.5rem 2rem;
+	margin-right: 0.1rem;
+	color: #fff;
+	background: #3c2520;
+}
+
+header .nav ul li a {
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+
+}
+
+/*header .nav ul li a:focus,
+header .nav ul li a:hover {
+	border: 1px solid #000; 
+	border-radius: 1rem;
+	background: #049B01;
+	color: #fff;
+}
+
+header .nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}*/

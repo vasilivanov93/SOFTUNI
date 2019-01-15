@@ -1,0 +1,33 @@
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.circle {
+	width: 150px;
+	height: 150px;
+	animation: squareToCircle 1.5s ease-in infinite alternate;
+}
+
+@keyframes squareToCircle {
+	from {
+		border-radius: 0%;
+		background: #FF8C00;
+	}
+
+	to {
+		border-radius: 50%;
+		background: #FF0000;
+	}
+}

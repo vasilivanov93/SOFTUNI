@@ -1,0 +1,61 @@
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+.nav li {
+	padding-bottom: 0.5rem;
+	color: #333;
+	animation: navitemin 0.5s ease;
+}
+
+.nav li:nth-child(1) { animation-delay: 0.25s }
+.nav li:nth-child(2) { animation-delay: 0.5s }
+.nav li:nth-child(3) { animation-delay: 0.75s }
+.nav li:nth-child(4) { animation-delay: 1s }
+.nav li:nth-child(5) { animation-delay: 1.25s }
+.nav li:nth-child(6) { animation-delay: 1.5s }
+.nav li:nth-child(7) { animation-delay: 1.75s }
+
+.nav a {
+	color: #333;
+}
+
+.nav i {
+	padding-right: 1rem;
+}
+
+@keyframes navitemin {
+	from {
+		opacity: 0;
+		transform: translate(-2rem, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+

@@ -1,0 +1,126 @@
+body {
+	font: "Helvetica" 12xp/1.5;
+	background: #eee;
+}
+
+.site {
+	max-width: 600px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+
+	&-header {
+		flex: 1 0 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 2em 0 2em 2em;
+		border-bottom: 2px solid #333;
+		$site: site;
+		@at-root .#{$site}-title {
+			font-size: 2em;
+			font-weight: bold;
+			padding-bottom: 0.5em;
+		}
+	}
+	
+	&-main {
+		flex: 1 0 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 2em 0;
+		padding-left: 2em;
+		
+		@at-root .site-content {
+			flex: 0 0 80%;
+			
+			@at-root .main-content:nth-child(1) {
+				padding-bottom: 2em;
+			}
+		}
+		
+		@at-root .site-aside {
+			flex: 0 0 20%;
+		}
+	}
+
+	&-navigation li {
+		padding-left: 2em;
+		padding-bottom: 0.5em;
+		list-style-type: circle;
+		list-style-position: inside;
+	}
+
+	&-navigation a {
+		color: #000;
+		text-decoration: none;
+	}
+
+	&-footer {
+		flex: 1 0 100%;
+		padding-left: 2em;
+		padding-top: 2em;
+		border-top: 2px solid #333;
+	}
+}
+
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+);
+
+$breakpoint: map-get($breakpoints, sm);
+
+// Respond above.
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@include respond-above(xs) {
+  body {
+    font-size: 12px;
+  }
+	
+	.site-content {
+		flex: 1 0 100%;
+		padding-bottom: 3em;
+	}
+}
+
+@include respond-above(sm) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@include respond-above(md) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@include respond-above(lg) {
+  body {
+    font-size: 18px;
+  }
+}

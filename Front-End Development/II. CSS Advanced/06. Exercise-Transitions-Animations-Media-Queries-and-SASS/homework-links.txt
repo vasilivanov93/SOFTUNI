@@ -1,0 +1,11 @@
+01. Circle Animation - https://codepen.io/vasilivanov93/pen/rQzwNV
+
+02. Animation Delay Nth-Child - https://codepen.io/vasilivanov93/pen/OajjKW
+
+03. Animating Gradients - https://codepen.io/vasilivanov93/pen/NEvypy
+
+04. Basic Layout With SASS and Flexbox - https://codepen.io/vasilivanov93/pen/YRxYGg
+
+05. Aspect Ratio Boxes with SASS - https://codepen.io/vasilivanov93/pen/aQLbyB
+
+06. For Loops and Animation Delay - https://codepen.io/vasilivanov93/pen/QJMXNo

@@ -1,0 +1,83 @@
+body {
+  font: "Helvetica" 12xp/1.5;
+  background: #eee;
+}
+
+.site {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.site-header {
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em 0 2em 2em;
+  border-bottom: 2px solid #333;
+}
+.site-title {
+  font-size: 2em;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+.site-main {
+  flex: 1 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2em 0;
+  padding-left: 2em;
+}
+.site-content {
+  flex: 0 0 80%;
+}
+.main-content:nth-child(1) {
+  padding-bottom: 2em;
+}
+.site-aside {
+  flex: 0 0 20%;
+}
+.site-navigation li {
+  padding-left: 2em;
+  padding-bottom: 0.5em;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+.site-navigation a {
+  color: #000;
+  text-decoration: none;
+}
+.site-footer {
+  flex: 1 0 100%;
+  padding-left: 2em;
+  padding-top: 2em;
+  border-top: 2px solid #333;
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+
+  .site-content {
+    flex: 1 0 100%;
+    padding-bottom: 3em;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,36 @@
+$box-size: 5rem;
+
+.boxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: $box-size;
+
+	@at-root .box {
+		width: $box-size;
+		height: $box-size;
+		background: #000;
+		animation: slide--down-box 0.3s 1 both;
+
+		&:not(:last-of-type) {
+			margin-right: 2em;
+		}
+	}
+}
+
+@for $i from 1 through 10 {
+	.box:nth-child(#{$i}) {
+		animation-delay: $i * 0.15s;
+	}
+}
+
+@keyframes slide--down-box {
+	from {
+		opacity: 0;
+		transform: translateY(-1 * $box-size);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
