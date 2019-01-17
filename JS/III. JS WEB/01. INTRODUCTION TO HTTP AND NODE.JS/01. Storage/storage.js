@@ -9,12 +9,6 @@ function isString(key) {
 }
 
 function existingKey(key) {
-    if (storage.hasOwnProperty(key)) {
-        throw new Error('The key already exists!');
-    }
-}
-
-function notExistKey(key) {
     if (!storage.hasOwnProperty(key)) {
         throw new Error('The key does not exist!');
     }
@@ -23,13 +17,16 @@ function notExistKey(key) {
 module.exports = {
     put: (key, value) => {
         isString(key);
-        existingKey(key);
+
+        if (storage.hasOwnProperty(key)) {
+            throw new Error('The key already exists!');
+        }
 
         storage[key] = value;
     },
     get: (key) => {
         isString(key);
-        notExistKey(key);
+        existingKey(key);
 
         return storage[key];
     },
@@ -43,13 +40,13 @@ module.exports = {
     },
     update: (key, newValue) => {
         isString(key);
-        notExistKey(key);
+        existingKey(key);
 
         storage[key] = newValue;
     },
     delete: (key) => {
         isString(key);
-        notExistKey(key);
+        existingKey(key);
 
         delete storage[key];
     },
