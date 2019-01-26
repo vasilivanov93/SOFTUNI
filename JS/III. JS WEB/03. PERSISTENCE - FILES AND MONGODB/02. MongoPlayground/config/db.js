@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
+const connectionString = 'mongodb://localhost:27017/MongoPlayground';
 
-module.exports = () => {
- //TODO:
-}
+module.exports =  mongoose.connect(connectionString, { useNewUrlParser: true });
+
+require('../models/TagSchema');
+require('../models/ImageSchema');

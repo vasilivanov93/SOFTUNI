@@ -23,22 +23,23 @@
             <input type="text" id='tagsId' style='display:none' name="tagsID" value="tagsF">
             <input type="submit" value="Submit">
             <br><br>
+        </fieldset>
     </form>
-    <div class='replaceMe'></div>
-    </fieldset>
+    <div class="replaceMe"></div>
+
 </body>
 
-
 <script>
-    let tagElements = document.querySelectorAll('.tag')
-    let tagField = document.querySelector('#tagField')
-    let tagsId = document.querySelector('#tagsId')
+    let tagElements = document.querySelectorAll('.tag');
+    let tagField = document.querySelector('#tagField');
+    let tagsId = document.querySelector('#tagsId');
 
     for(let t of tagElements){
        t.addEventListener('click',function(){
-           tagField.value+= this.innerText+','
-           tagsId.value += this.getAttribute('id')+','
-       })
+           tagField.value+= this.innerText+',';
+           tagsId.value += this.getAttribute('id') + ',';
+       });
    }
 </script>
+
 </html>
