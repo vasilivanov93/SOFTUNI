@@ -1,0 +1,27 @@
+<form method="post">
+    <h2>Edit Product</h2>
+    <div>
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <option value="beef">Beef</option>
+            <option value="chicken">Chicken</option>
+            <option value="lamb">Lamb</option>
+        </select>
+    </div>
+    <div>
+        <label for="imageUrl">Image Url</label>
+        <input id="imageUrl" name="imageUrl" value="{{imageUrl}}" type="text">
+    </div>
+    <div>
+        <label for="size">Size</label>
+        <input id="size" name="size" value="{{size}}" type="number">
+    </div>
+    <div>
+        <strong>Toppings</strong><br>
+        <textarea name="toppings">{{toppings}}</textarea>
+    </div>
+    <div>
+        <a href="/" class="button">Cancel</a>
+        <input type="submit" value="Edit" class="button" style="border:0"/>
+    </div>
+</form>
