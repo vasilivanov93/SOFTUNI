@@ -1,5 +1,5 @@
 import React from 'react';
 
-const AppFooter = () => "";
+const AppFooter = () => (<div></div>);
 
 export default AppFooter;
