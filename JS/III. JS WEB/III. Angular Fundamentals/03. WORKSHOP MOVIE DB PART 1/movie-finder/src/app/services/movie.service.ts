@@ -11,7 +11,7 @@ const API_KEY = '&api_key=a2dfb3b8a6f5210abac13084816781bb';
 })
 export class MovieService {
   popularEndpoint = 'discover/movie?sort_by=popularity.desc';
-  theatersEndpoint = 'discover/movie?primary_release_date.gte=2018-07-15&primary_release_date.lte=2018-02-01';
+  theatersEndpoint = 'discover/movie?primary_release_date.gte=2018-07-15&primary_release_date.lte=2019-02-01';
 
   constructor(private http: HttpClient) { }
 

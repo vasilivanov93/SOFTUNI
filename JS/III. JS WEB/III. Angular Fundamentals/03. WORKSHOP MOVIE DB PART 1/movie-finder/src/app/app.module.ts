@@ -9,6 +9,7 @@ import { LandingComponent } from './landing/landing.component';
 import {MovieService} from "./services/movie.service";
 import {HttpClientModule} from "@angular/common/http";
 import { MoviesComponent } from './movies/movies.component';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MoviesComponent } from './movies/movies.component';
     NavbarComponent,
     FooterComponent,
     LandingComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
