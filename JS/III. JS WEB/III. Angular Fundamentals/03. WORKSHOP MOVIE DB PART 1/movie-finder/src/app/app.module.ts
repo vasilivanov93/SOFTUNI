@@ -8,13 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 import {MovieService} from "./services/movie.service";
 import {HttpClientModule} from "@angular/common/http";
+import { MoviesComponent } from './movies/movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    LandingComponent
+    LandingComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
