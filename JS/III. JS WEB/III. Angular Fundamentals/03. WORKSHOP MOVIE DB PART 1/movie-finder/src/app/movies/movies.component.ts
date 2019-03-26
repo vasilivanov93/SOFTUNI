@@ -18,7 +18,7 @@ export class MoviesComponent implements OnInit {
     });
 
     this.moviesService.getTheaters().subscribe(theaterMovies => {
-      this.theaterMovies = theaterMovies['results'].slice(6, 12);
+      this.theaterMovies = theaterMovies['results'].slice(0, 6);
     });
   }
 }
