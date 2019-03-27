@@ -14,4 +14,20 @@
       <app-movie [movie]="movie"></app-movie>
     </div>
   </div>
+
+  <h2>Popular Kids Movie</h2>
+
+  <div class="row">
+    <div class="col-lg-2" *ngFor="let movie of popularKidsMovies">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
+
+  <h2>Best Drama Movie</h2>
+
+  <div class="row">
+    <div class="col-lg-2" *ngFor="let movie of bestDramaMovies">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
 </div>
