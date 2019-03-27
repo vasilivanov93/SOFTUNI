@@ -13,6 +13,8 @@ import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import {SingleMovieResolver} from "./services/single-movie.resolver";
 import {MovieListResolver} from "./services/movie-list.resolver";
+import {FormsModule} from "@angular/forms";
+import { MovieSearchComponent } from './movie-search/movie-search.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import {MovieListResolver} from "./services/movie-list.resolver";
     LandingComponent,
     MoviesComponent,
     MovieComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MovieSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [SingleMovieResolver, MovieListResolver],
   bootstrap: [AppComponent]
