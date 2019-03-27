@@ -12,6 +12,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import {SingleMovieResolver} from "./services/single-movie.resolver";
+import {MovieListResolver} from "./services/movie-list.resolver";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {SingleMovieResolver} from "./services/single-movie.resolver";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [SingleMovieResolver],
+  providers: [SingleMovieResolver, MovieListResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

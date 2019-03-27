@@ -14,5 +14,4 @@ export class SingleMovieResolver implements Resolve<MovieDetails> {
 
     return this.movieService.getMovieById(id);
   }
-
 }
