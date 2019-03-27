@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import Movie from '../models/Movie';
 import MovieDetails from '../models/MovieDetails';
+import {map} from "rxjs/operators";
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '&api_key=a2dfb3b8a6f5210abac13084816781bb';
@@ -19,19 +20,23 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getPopular(): Observable<Array<Movie>> {
-    return this.http.get<Array<Movie>>(BASE_URL + this.popularEndpoint + API_KEY);
+    return this.http.get<Array<Movie>>(BASE_URL + this.popularEndpoint + API_KEY)
+      .pipe(map((data) => data['results'].slice(0, 6)));
   }
 
   getTheaters(): Observable<Array<Movie>> {
-    return this.http.get<Array<Movie>>(BASE_URL + this.theatersEndpoint + API_KEY);
+    return this.http.get<Array<Movie>>(BASE_URL + this.theatersEndpoint + API_KEY)
+      .pipe(map((data) => data['results'].slice(0, 6)));
   }
 
   getPopularKids(): Observable<Array<Movie>> {
-    return this.http.get<Array<Movie>>(BASE_URL + this.popularKidsEndPoint + API_KEY);
+    return this.http.get<Array<Movie>>(BASE_URL + this.popularKidsEndPoint + API_KEY)
+      .pipe(map((data) => data['results'].slice(0, 6)));
   }
 
   getBestDrama(): Observable<Array<Movie>> {
-    return this.http.get<Array<Movie>>(BASE_URL + this.bestDramaEndPoint + API_KEY);
+    return this.http.get<Array<Movie>>(BASE_URL + this.bestDramaEndPoint + API_KEY)
+      .pipe(map((data) => data['results'].slice(0, 6)));
   }
 
   getMovieById(id: string) {

@@ -23,20 +23,20 @@ export class MoviesComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.popularMoviesSub = this.moviesService.getPopular().subscribe(popularMovies => {
-      this.popularMovies = popularMovies['results'].slice(0, 6);
+      this.popularMovies = popularMovies;
     });
 
     this.theatreMoviesSub = this.moviesService.getTheaters().subscribe(theaterMovies => {
-      this.theaterMovies = theaterMovies['results'].slice(0, 6);
+      this.theaterMovies = theaterMovies;
     });
 
     this.popularKidsMoviesSub = this.moviesService.getPopularKids().subscribe(popularKidsMovies => {
-      this.popularKidsMovies = popularKidsMovies['results'].slice(0, 6);
+      this.popularKidsMovies = popularKidsMovies;
     });
 
 
     this.bestDramaMoviesSub = this.moviesService.getBestDrama().subscribe(bestDramaMovies => {
-      this.bestDramaMovies = bestDramaMovies['results'].slice(0, 6);
+      this.bestDramaMovies = bestDramaMovies;
     });
   }
 
