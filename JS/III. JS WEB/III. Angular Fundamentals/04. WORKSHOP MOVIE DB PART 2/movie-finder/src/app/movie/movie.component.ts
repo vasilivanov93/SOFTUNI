@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import Movie from "../models/Movie";
+import Movie from '../models/Movie';
 
 @Component({
   selector: 'app-movie',
@@ -7,7 +7,7 @@ import Movie from "../models/Movie";
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  @Input('movie')
+  @Input()
   movie: Movie;
   imagePath: string;
   constructor() { }

@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import Movie from '../models/Movie';
+import MovieDetails from '../models/MovieDetails';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '&api_key=a2dfb3b8a6f5210abac13084816781bb';
+const API_KEY_ALT = '?api_key=a2dfb3b8a6f5210abac13084816781bb';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +32,9 @@ export class MovieService {
 
   getBestDrama(): Observable<Array<Movie>> {
     return this.http.get<Array<Movie>>(BASE_URL + this.bestDramaEndPoint + API_KEY);
+  }
+
+  getMovieById(id: string) {
+    return this.http.get<MovieDetails>(BASE_URL + `movie/${id}` + API_KEY_ALT);
   }
 }
