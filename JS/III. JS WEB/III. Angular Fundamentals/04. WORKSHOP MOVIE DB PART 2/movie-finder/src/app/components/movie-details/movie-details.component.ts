@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
-import {MovieService} from '../services/movie.service';
-import MovieDetails from "../models/MovieDetails";
+import {ActivatedRoute} from '@angular/router';
+
+import MovieDetails from '../../models/MovieDetails';
 
 @Component({
   selector: 'app-movie-details',
@@ -18,5 +18,4 @@ export class MovieDetailsComponent implements OnInit {
     this.movie = this.route.snapshot.data['singleMovie'];
     this.movieGenre = this.movie.genres.map(genre => genre['name']).join(', ');
   }
-
 }

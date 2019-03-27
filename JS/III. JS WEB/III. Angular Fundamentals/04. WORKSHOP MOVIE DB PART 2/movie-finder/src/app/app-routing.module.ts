@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MovieDetailsComponent} from './movie-details/movie-details.component';
-import {MoviesComponent} from './movies/movies.component';
+import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
+import {MoviesComponent} from './components/movies/movies.component';
 import {SingleMovieResolver} from './services/single-movie.resolver';
 import {MovieListResolver} from './services/movie-list.resolver';
-import {MovieSearchComponent} from './movie-search/movie-search.component';
+import {MovieSearchComponent} from './components/movie-search/movie-search.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'movies'},
