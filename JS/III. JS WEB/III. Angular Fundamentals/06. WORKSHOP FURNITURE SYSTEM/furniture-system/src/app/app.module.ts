@@ -15,6 +15,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './authentication/auth.service';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtInterceptorService } from './authentication/jwt-interceptor.service';
+import { FurnitureAllComponent } from './furniture/furniture-all/furniture-all.component';
+import { CreateFurnitureComponent } from './furniture/create-furniture/create-furniture.component';
+import { FurnitureDetailsComponent } from './furniture/furniture-details/furniture-details.component';
+import { FurnitureUserComponent } from './furniture/furniture-user/furniture-user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { JwtInterceptorService } from './authentication/jwt-interceptor.service'
     SignupComponent,
     HomeComponent,
     DropdownDirective,
-    CollapseDirective
+    CollapseDirective,
+    FurnitureAllComponent,
+    CreateFurnitureComponent,
+    FurnitureDetailsComponent,
+    FurnitureUserComponent
   ],
   imports: [
     BrowserModule,
