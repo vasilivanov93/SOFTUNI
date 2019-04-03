@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +14,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -25,8 +26,7 @@ export class SignupComponent implements OnInit {
     this.authService
       .register(this.registerForm.value)
       .subscribe((data) => {
-        console.log(data);
-
+        this.toastr.success(data['message']);
         this.router.navigate([ '/signin' ]);
       });
   }

@@ -5,7 +5,7 @@
       <p>Select furniture from the catalog to view details.</p>
     </div>
   </div>
-  <div class="row space-top" *ngIf="furniture$; else noFurniture">
+  <div class="row space-top" *ngIf="furniture$ | async as furniture; else noFurniture">
     <div class="col-md-4" *ngFor="let furniture of furniture$ | async">
       <div class="card text-white bg-primary">
         <div class="card-body">
@@ -23,5 +23,7 @@
       </div>
     </div>
   </div>
-  <ng-template #noFurniture>No Furniture!</ng-template>
+  <ng-template #noFurniture>
+    <h1>No Furniture!</h1>
+  </ng-template>
 </div>

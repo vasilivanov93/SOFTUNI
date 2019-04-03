@@ -18,13 +18,9 @@ export class CreateFurnitureComponent implements OnInit {
   }
 
   createFurniture() {
-    console.log(this.createForm);
-
     this.furnitureService
       .create(this.createForm.value)
       .subscribe((data) => {
-        console.log(data);
-
         this.router.navigate([ '/furniture/all' ]);
       });
   }

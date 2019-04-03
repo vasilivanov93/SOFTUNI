@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -14,7 +14,9 @@ import { CollapseDirective } from './navigation/collapse.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './authentication/auth.service';
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtInterceptorService } from './jwt-interceptor.service';
+import { ResponseHandlerInterceptorService } from './response-handler-interceptor.service';
 import { FurnitureAllComponent } from './furniture/furniture-all/furniture-all.component';
 import { CreateFurnitureComponent } from './furniture/create-furniture/create-furniture.component';
 import { FurnitureDetailsComponent } from './furniture/furniture-details/furniture-details.component';
@@ -40,12 +42,14 @@ import { FurnitureService } from './furniture/furniture.service';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [
     AuthService,
     FurnitureService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptorService, multi: true },
   ],
   bootstrap: [AppComponent]
 })

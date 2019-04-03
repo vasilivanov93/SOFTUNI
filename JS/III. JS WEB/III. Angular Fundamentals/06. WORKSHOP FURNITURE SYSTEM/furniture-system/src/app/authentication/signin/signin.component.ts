@@ -6,6 +6,7 @@ import {
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-signin',
@@ -17,7 +18,8 @@ export class SigninComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -29,7 +31,7 @@ export class SigninComponent implements OnInit {
       .subscribe((data) => {
         localStorage.setItem('token', data['token']);
         localStorage.setItem('username', data['user']['name']);
-
+        // this.toastr.success(data['message']);
         this.router.navigate([ '/home' ]);
       });
   }
