@@ -9,6 +9,7 @@ import { Furniture } from './models/furniture';
 export class FurnitureService {
   private readonly createUrl = 'http://localhost:5000/furniture/create';
   private readonly getAllUrl = 'http://localhost:5000/furniture/all';
+  private readonly getDetailsUrl = 'http://localhost:5000/furniture/details/';
 
   constructor(private http: HttpClient) { }
 
@@ -18,5 +19,9 @@ export class FurnitureService {
 
   getAllFurniture(): Observable<Array<Furniture>> {
     return this.http.get<Array<Furniture>>(this.getAllUrl);
+  }
+
+  getFurnitureDetails(id): Observable<Furniture> {
+    return this.http.get<Furniture>(this.getDetailsUrl + id);
   }
 }
