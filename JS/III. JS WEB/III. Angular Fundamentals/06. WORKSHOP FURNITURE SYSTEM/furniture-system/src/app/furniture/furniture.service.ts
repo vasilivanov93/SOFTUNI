@@ -10,6 +10,8 @@ export class FurnitureService {
   private readonly createUrl = 'http://localhost:5000/furniture/create';
   private readonly getAllUrl = 'http://localhost:5000/furniture/all';
   private readonly getDetailsUrl = 'http://localhost:5000/furniture/details/';
+  private readonly getMyFurnitureUrl = 'http://localhost:5000/furniture/user';
+  private readonly deleteFurnitureUrl = 'http://localhost:5000/furniture/delete/';
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +25,13 @@ export class FurnitureService {
 
   getFurnitureDetails(id): Observable<Furniture> {
     return this.http.get<Furniture>(this.getDetailsUrl + id);
+  }
+
+  getMyFurniture(): Observable<Array<Furniture>> {
+    return this.http.get<Array<Furniture>>(this.getMyFurnitureUrl);
+  }
+
+  deleteFurniture(id) {
+    return this.http.delete(this.deleteFurnitureUrl + id);
   }
 }
