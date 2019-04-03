@@ -1,7 +1,7 @@
-import { 
-  Component, 
-  OnInit, 
-  ViewChild 
+import {
+  Component,
+  OnInit,
+  ViewChild
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
   @ViewChild('loginForm') loginForm: NgForm;
 
   constructor(
-    private authService : AuthService,
+    private authService: AuthService,
     private router: Router
   ) { }
 
@@ -26,9 +26,11 @@ export class SigninComponent implements OnInit {
   signIn() {
     this.authService
       .login(this.loginForm.value)
-      .subscribe(() => {
-        this.router.navigate([ '/home' ])
+      .subscribe((data) => {
+        localStorage.setItem('token', data['token']);
+        localStorage.setItem('username', data['user']['name']);
+
+        this.router.navigate([ '/home' ]);
       });
   }
-
 }
