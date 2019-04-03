@@ -13,6 +13,7 @@ import { CollapseDirective } from './navigation/collapse.directive';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './authentication/auth.service';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { AuthService } from './authentication/auth.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
-  providers: [ 
+  providers: [
     AuthService
   ],
   bootstrap: [AppComponent]
