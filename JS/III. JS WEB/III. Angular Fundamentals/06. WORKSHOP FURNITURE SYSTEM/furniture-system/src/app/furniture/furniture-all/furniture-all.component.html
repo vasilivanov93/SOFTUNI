@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row space-top" *ngIf="furniture$ | async as furniture; else noFurniture">
-    <div class="col-md-4" *ngFor="let furniture of furniture$ | async">
+    <div class="col-md-5" *ngFor="let furniture of furniture$ | async">
       <div class="card text-white bg-primary">
         <div class="card-body">
           <blockquote class="card-blockquote">
@@ -17,6 +17,7 @@
             </footer>
             <div class="pull-right">
               <a [routerLink]="['/furniture/details', furniture._id]" class="btn btn-info">Details</a>
+              <a *ngIf="authService.isAdmin()" [routerLink]="['/furniture/edit', furniture._id]" class="btn btn-success">Edit</a>
               <a *ngIf="authService.isAdmin()" (click)="deleteFurniture(furniture._id)" class="btn btn-danger">Delete Item</a>
             </div>
           </blockquote>

@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1>Edit Furniture</h1>
+
+      <p>Please fill all fields.</p>
+    </div>
+  </div>
+  <ng-template [ngIf]="furniture">
+    <form #editForm="ngForm" (ngSubmit)="editFurniture()">
+      <div class="row space-top">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="form-control-label" for="new-make">Make</label>
+
+            <input #make="ngModel" [(ngModel)]="furniture.make" name="make" minlength="4" class="form-control" id="new-make" type="text" required>
+
+            <div class="alert alert-danger" *ngIf="make?.touched && make?.errors?.required">
+              This field is required!
+            </div>
+
+            <div class="alert alert-danger" *ngIf="make?.errors?.minlength">
+              Make must be at least {{make.errors.minlength.requiredLength}} symbols long!
+            </div>
+          </div>
+
+          <div class="form-group has-success">
+            <label class="form-control-label" for="new-model">Model</label>
+
+            <input #model="ngModel" [(ngModel)]="furniture.model" name="model" minlength="4" class="form-control is-valid" id="new-model" type="text" required>
+
+            <div class="alert alert-danger" *ngIf="model?.touched && model?.errors?.required">
+              This field is required!
+            </div>
+
+            <div class="alert alert-danger" *ngIf="model?.errors?.minlength">
+              Model must be at least {{model.errors.minlength.requiredLength}} symbols long!
+            </div>
+          </div>
+
+          <div class="form-group has-danger">
+            <label class="form-control-label" for="new-year">Year</label>
+
+            <input #year="ngModel" [(ngModel)]="furniture.year" name="year" pattern="^(19[5-9]\d|20[0-4]\d|2050)$" class="form-control is-invalid" id="new-year" type="number" required>
+
+            <div class="alert alert-danger" *ngIf="year?.touched && year?.errors?.required">
+              This field is required!
+            </div>
+
+            <div class="alert alert-danger" *ngIf="year?.errors?.pattern">
+              Year must be between 1950 and 2050!
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-control-label" for="new-description">Description</label>
+
+            <input #description="ngModel" [(ngModel)]="furniture.description" name="description" minlength="10" class="form-control" id="new-description" type="text" required>
+
+            <div class="alert alert-danger" *ngIf="description?.touched && description?.errors?.required">
+              This field is required!
+            </div>
+
+            <div class="alert alert-danger" *ngIf="description?.errors?.minlength">
+              Description must be at least {{description.errors.minlength.requiredLength}} symbols long!
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="form-control-label" for="new-price">Price</label>
+
+            <input #price="ngModel" [(ngModel)]="furniture.price" name="price" pattern="^[+]?\d+([.]\d+)?$" class="form-control" id="new-price" type="number" required>
+
+            <div class="alert alert-danger" *ngIf="price?.touched && price?.errors?.required">
+              This field is required!
+            </div>
+
+            <div class="alert alert-danger" *ngIf="price?.errors?.pattern">
+              Price must be positive number!
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-control-label" for="new-image">Image</label>
+
+            <input #image="ngModel" [(ngModel)]="furniture.image" name="image" class="form-control" id="new-image" type="text" required>
+
+            <div class="alert alert-danger" *ngIf="image?.touched && image?.errors?.required">
+              This field is required!
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-control-label" for="new-material">Material (optional)</label>
+
+            <input #material="ngModel" [(ngModel)]="furniture.material" name="material" class="form-control" id="new-material" type="text">
+          </div>
+
+          <button [disabled]="editForm.invalid" type="submit" class="btn btn-success">Edit</button>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>

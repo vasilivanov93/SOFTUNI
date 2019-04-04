@@ -8,7 +8,9 @@ import { CreateFurnitureComponent } from './create-furniture/create-furniture.co
 import { FurnitureDetailsComponent } from './furniture-details/furniture-details.component';
 import { FurnitureUserComponent } from './furniture-user/furniture-user.component';
 import { FurnitureService } from './furniture.service';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { EditFurnitureComponent } from './edit-furniture/edit-furniture.component';
+import {AdminGuard} from '../authentication/guards/admin.guard';
 
 @NgModule({
   imports: [
@@ -19,6 +21,7 @@ import {FormsModule} from '@angular/forms';
       { path: 'create', component: CreateFurnitureComponent },
       { path: 'all', component: FurnitureAllComponent },
       { path: 'details/:id', component: FurnitureDetailsComponent },
+      { path: 'edit/:id', component: EditFurnitureComponent, canActivate: [AdminGuard] },
       { path: 'user', component: FurnitureUserComponent }
     ])
   ],
@@ -26,7 +29,8 @@ import {FormsModule} from '@angular/forms';
     FurnitureAllComponent,
     CreateFurnitureComponent,
     FurnitureDetailsComponent,
-    FurnitureUserComponent
+    FurnitureUserComponent,
+    EditFurnitureComponent
   ],
   providers: [
     FurnitureService

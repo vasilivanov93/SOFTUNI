@@ -12,6 +12,8 @@ export class FurnitureService {
   private readonly getDetailsUrl = 'http://localhost:5000/furniture/details/';
   private readonly getMyFurnitureUrl = 'http://localhost:5000/furniture/user';
   private readonly deleteFurnitureUrl = 'http://localhost:5000/furniture/delete/';
+  private readonly furnitureByIdUrl = 'http://localhost:5000/furniture/';
+  private readonly editFurnitureUrl = 'http://localhost:5000/furniture/edit/';
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +35,13 @@ export class FurnitureService {
 
   deleteFurniture(id) {
     return this.http.delete(this.deleteFurnitureUrl + id);
+  }
+
+  getFurnitureById(id) {
+    return this.http.get<Furniture>(this.furnitureByIdUrl + id);
+  }
+
+  editFurniture(id, furniture: Furniture) {
+    return this.http.put(this.editFurnitureUrl + id, furniture);
   }
 }
