@@ -17,6 +17,7 @@
             </footer>
             <div class="pull-right">
               <a [routerLink]="['/furniture/details', furniture._id]" class="btn btn-info">Details</a>
+              <a *ngIf="authService.isAdmin()" (click)="deleteFurniture(furniture._id)" class="btn btn-danger">Delete Item</a>
             </div>
           </blockquote>
         </div>

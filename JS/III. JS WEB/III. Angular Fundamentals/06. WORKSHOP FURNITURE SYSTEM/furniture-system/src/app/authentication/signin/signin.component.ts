@@ -31,7 +31,8 @@ export class SigninComponent implements OnInit {
       .subscribe((data) => {
         localStorage.setItem('token', data['token']);
         localStorage.setItem('username', data['user']['name']);
-        // this.toastr.success(data['message']);
+        localStorage.setItem('isAdmin', data['user']['isAdmin']);
+        this.toastr.success(data['message']);
         this.router.navigate([ '/home' ]);
       });
   }

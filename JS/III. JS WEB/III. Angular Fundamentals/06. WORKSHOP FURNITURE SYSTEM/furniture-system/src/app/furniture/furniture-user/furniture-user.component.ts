@@ -11,7 +11,7 @@ import { Furniture } from '../models/furniture';
 })
 export class FurnitureUserComponent implements OnInit {
   userFurniture$: Observable<Array<Furniture>>;
-  constructor(private furnitureService: FurnitureService,  private router: Router) { }
+  constructor(private furnitureService: FurnitureService, private router: Router) { }
 
   ngOnInit() {
     this.userFurniture$ = this.furnitureService.getMyFurniture();

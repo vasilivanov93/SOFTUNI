@@ -26,6 +26,12 @@ export class AuthService {
     return localStorage.getItem('token') !== null;
   }
 
+  isAdmin() {
+    return localStorage.getItem('token') !== null
+      && localStorage.getItem('username') === 'Admin'
+      && localStorage.getItem('isAdmin');
+  }
+
   getToken() {
     const token = localStorage.getItem('token');
     return token;
