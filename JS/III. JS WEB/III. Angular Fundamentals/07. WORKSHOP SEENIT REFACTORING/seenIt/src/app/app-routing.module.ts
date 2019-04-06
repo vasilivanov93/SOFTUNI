@@ -11,11 +11,13 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/login' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'posts', component: PostListComponent },
-  { path: 'posts/user', component: PostListComponent },
-  { path: 'posts/create', component: PostCreateComponent },
-  { path: 'posts/edit/:id', component: PostEditComponent },
-  { path: 'posts/details/:id', component: PostDetailsComponent }
+  { path: 'posts', children: [
+      { path: '', pathMatch: 'full', component: PostListComponent },
+      { path: 'user', component: PostListComponent },
+      { path: 'create', component: PostCreateComponent },
+      { path: 'edit/:id', component: PostEditComponent },
+      { path: 'details/:id', component: PostDetailsComponent }
+    ]}
 ];
 
 @NgModule({

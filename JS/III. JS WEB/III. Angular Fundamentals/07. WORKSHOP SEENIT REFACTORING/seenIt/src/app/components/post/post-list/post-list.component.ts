@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, UrlSegment, Router } from '@angular/router';
+import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { PostService } from '../../../core/services/post.service';
 import {PostInfo} from '../../shared/models/Post-Info';
 import {Observable} from 'rxjs';
@@ -14,24 +14,16 @@ export class PostListComponent implements OnInit {
 
   constructor(
     private postService: PostService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.route.url.subscribe((segmentArr: UrlSegment[]) => {
-      if (segmentArr.length === 1) {
-       this.allPosts$ = this.postService.getAll();
-      } else {
-        this.allPosts$ = this.postService.getUserPosts();
-      }
-    });
-  }
-
-  onDeletePost(id: string) {
-    this.postService.deletePost(id)
-      .subscribe(() => {
-        this.allPosts$ = this.postService.getAll();
-      });
+    const segmentArr = this.route.snapshot.url;
+    const segment = segmentArr[0];
+    if (!segment) {
+      this.allPosts$ = this.postService.getAll();
+    } else {
+      this.allPosts$ = this.postService.getUserPosts();
+    }
   }
 }
