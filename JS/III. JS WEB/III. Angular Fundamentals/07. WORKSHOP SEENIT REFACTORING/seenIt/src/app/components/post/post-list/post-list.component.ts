@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, UrlSegment, Router } from '@angular/router';
 import { PostService } from '../../../core/services/post.service';
 import {PostInfo} from '../../shared/models/Post-Info';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-post-list',
@@ -9,7 +10,7 @@ import {PostInfo} from '../../shared/models/Post-Info';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  allPosts: PostInfo[];
+  allPosts$: Observable<PostInfo[]>;
 
   constructor(
     private postService: PostService,
@@ -20,15 +21,9 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.route.url.subscribe((segmentArr: UrlSegment[]) => {
       if (segmentArr.length === 1) {
-        this.postService.getAll()
-          .subscribe((data) => {
-            this.allPosts = data;
-          });
+       this.allPosts$ = this.postService.getAll();
       } else {
-        this.postService.getUserPosts()
-          .subscribe((data) => {
-            this.allPosts = data;
-          });
+        this.allPosts$ = this.postService.getUserPosts();
       }
     });
   }
@@ -36,10 +31,7 @@ export class PostListComponent implements OnInit {
   onDeletePost(id: string) {
     this.postService.deletePost(id)
       .subscribe(() => {
-        this.postService.getAll()
-          .subscribe((data) => {
-            this.allPosts = data;
-          });
+        this.allPosts$ = this.postService.getAll();
       });
   }
 }

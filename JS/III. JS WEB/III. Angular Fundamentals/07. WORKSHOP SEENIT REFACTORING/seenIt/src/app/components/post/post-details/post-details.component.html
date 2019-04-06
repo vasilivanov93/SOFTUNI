@@ -1,26 +1,19 @@
 <section id="viewComments">
-  <ng-template [ngIf]="post">
     <app-post-info
+      *ngIf="(post$ | async) as post"
       [post]="post"
       [desc]="post.description">
     </app-post-info>
-  </ng-template>
   <div class="post post-content">
-    <form #f="ngForm" (ngSubmit)="postComment()" id="commentForm">
-      <label>Comment</label>
-      <textarea required ngModel name="content" type="text"></textarea>
-      <input type="submit" [disabled]="f.invalid" value="Add Comment" id="btnPostComment">
-    </form>
+    <app-comment-create
+      *ngIf="(post$ | async) as post"
+      [postId]="post._id"
+      (postCommentEmitter)="postComment($event)"
+    ></app-comment-create>
   </div>
-  <ng-template [ngIf]="comments">
-    <article *ngFor="let commentInfo of comments" class="post post-content">
-      <p>{{commentInfo['content']}}</p>
-      <div class="info">
-        submitted by {{commentInfo['author']}} |
-        <button *ngIf="commentInfo" (click)="deleteComment(commentInfo['_id'])" class="deleteLink">
-          delete
-        </button>
-      </div>
-    </article>
-  </ng-template>
+   <app-comment-info
+     *ngFor="let commentInfo of (comments$ | async)"
+     [commentInfo]="commentInfo"
+     (deleteCommentEmitter)="deleteComment($event)"
+   ></app-comment-info>
 </section>
