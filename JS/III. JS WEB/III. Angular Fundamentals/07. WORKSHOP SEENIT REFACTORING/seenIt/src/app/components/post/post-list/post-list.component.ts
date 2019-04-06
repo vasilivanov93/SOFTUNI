@@ -30,7 +30,7 @@ export class PostListComponent implements OnInit {
             this.allPosts = data;
           });
       }
-    })
+    });
   }
 
   onDeletePost(id: string) {
@@ -40,17 +40,6 @@ export class PostListComponent implements OnInit {
           .subscribe((data) => {
             this.allPosts = data;
           });
-      })
-  }
-
-  isAuthor(post: Object) {
-    return post['_acl']['creator'] === localStorage.getItem('userId');
-  }
-
-  deletePost(id: string) {
-    this.postService.deletePost(id)
-      .subscribe(() => {
-        this.router.navigate(['/posts']);
-      })
+      });
   }
 }

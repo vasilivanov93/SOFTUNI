@@ -16,6 +16,7 @@ import { PostDetailsComponent } from './components/post/post-details/post-detail
 import { HeaderComponent } from './components/shared/header/header.component';
 import { ContentComponent } from './components/shared/content/content.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { PostInfoComponent } from './components/post/post-info/post-info.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     HeaderComponent,
     ContentComponent,
     FooterComponent,
+    PostInfoComponent,
   ],
   imports: [
     BrowserModule,
