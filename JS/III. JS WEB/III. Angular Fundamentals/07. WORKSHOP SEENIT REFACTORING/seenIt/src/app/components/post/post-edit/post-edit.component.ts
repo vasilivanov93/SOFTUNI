@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../../../core/services/post.service';
+import {PostInfo} from '../../shared/models/Post-Info';
 
 @Component({
   selector: 'app-post-edit',
@@ -10,7 +11,7 @@ import { PostService } from '../../../core/services/post.service';
 })
 export class PostEditComponent implements OnInit {
   @ViewChild('f') editPostForm: NgForm;
-  post: Object;
+  post: PostInfo;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +34,6 @@ export class PostEditComponent implements OnInit {
     this.postService.editPost(body, this.post['_id'])
       .subscribe(() => {
         this.router.navigate([ '/posts' ]);
-      })
+      });
   }
 }
