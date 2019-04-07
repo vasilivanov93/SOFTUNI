@@ -5,7 +5,6 @@ import {RouterModule} from '@angular/router';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {TokenInterceptor} from './interceptors/token.interceptor';
 import {ErrorInterceptor} from './interceptors/error.interceptor';
-import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from '../app-routing.module';
 import {FormsModule} from '@angular/forms';
 
@@ -13,7 +12,6 @@ import {FormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
