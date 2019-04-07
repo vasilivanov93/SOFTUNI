@@ -16,10 +16,6 @@ import {RegisterComponent} from './register/register.component';
   declarations: [
     LoginComponent,
     RegisterComponent
-  ],
-  exports: [
-    LoginComponent,
-    RegisterComponent
   ]
 })
 
