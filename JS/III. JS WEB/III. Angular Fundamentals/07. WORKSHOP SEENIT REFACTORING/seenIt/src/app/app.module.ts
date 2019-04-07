@@ -1,14 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './components/authentication/register/register.component';
-import { LoginComponent } from './components/authentication/login/login.component';
 import { PostListComponent } from './components/post/post-list/post-list.component';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
 import { PostEditComponent } from './components/post/post-edit/post-edit.component';
@@ -19,12 +17,11 @@ import { CommentCreateComponent } from './components/comment/comment-create/comm
 import {TokenInterceptor} from './core/interceptors/token.interceptor';
 import {ErrorInterceptor} from './core/interceptors/error.interceptor';
 import {SharedModule} from './components/shared/shared.module';
+import {AuthenticationModule} from './components/authentication/authentication.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    LoginComponent,
     PostListComponent,
     PostCreateComponent,
     PostEditComponent,
@@ -40,7 +37,8 @@ import {SharedModule} from './components/shared/shared.module';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SharedModule
+    SharedModule,
+    AuthenticationModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

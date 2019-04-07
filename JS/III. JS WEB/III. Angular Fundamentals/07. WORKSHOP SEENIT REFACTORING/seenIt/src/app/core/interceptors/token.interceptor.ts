@@ -30,7 +30,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(tap((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse && req.url.endsWith('login')) {
-        this.toastr.success('Successfully registered!', 'Success');
+        this.toastr.success('Successfully logged in!', 'Success');
         this.auth.saveUserInfo(event.body);
       }
     }));

@@ -8,10 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 
-// Services
-import { CommentService } from '../../core/services/comment.service';
-import { PostService } from '../../core/services/post.service';
-
 @NgModule({
   imports: [
     CommonModule,
