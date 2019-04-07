@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -19,6 +19,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { PostInfoComponent } from './components/post/post-info/post-info.component';
 import { CommentInfoComponent } from './components/comment/comment-info/comment-info.component';
 import { CommentCreateComponent } from './components/comment/comment-create/comment-create.component';
+import {TokenInterceptor} from './core/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { CommentCreateComponent } from './components/comment/comment-create/comm
     ToastrModule.forRoot()
   ],
   providers: [
-  
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

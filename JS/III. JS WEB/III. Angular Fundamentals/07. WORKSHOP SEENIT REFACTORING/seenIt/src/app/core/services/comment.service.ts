@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { APP_KEY } from '../../kinvey.tokens';
 import {CommentInfo} from '../../components/shared/models/Comment-Info';
 
@@ -16,26 +16,14 @@ export class CommentService {
   ) { }
 
   getAllForPost(postId: string) {
-    return this.http.get<CommentInfo[]>(`${this.CREATE_COMMENT}?query={"postId":"${postId}"}&sort={"_kmd.ect": -1}`, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    })
+    return this.http.get<CommentInfo[]>(`${this.CREATE_COMMENT}?query={"postId":"${postId}"}&sort={"_kmd.ect": -1}`);
   }
 
   postComment(body: Object) {
-    return this.http.post(this.CREATE_COMMENT, body, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.post(this.CREATE_COMMENT, body);
   }
 
   deleteComment(id: string) {
-    return this.http.delete(`${this.CREATE_COMMENT}/${id}`, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.delete(`${this.CREATE_COMMENT}/${id}`);
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { APP_KEY } from '../../kinvey.tokens';
-import {PostInfo} from '../../components/shared/models/Post-Info';
+import { PostInfo } from '../../components/shared/models/Post-Info';
 
 @Injectable({
   providedIn: 'root'
@@ -16,59 +16,31 @@ export class PostService {
   ) { }
 
   getAll() {
-    return this.http.get<PostInfo[]>(this.ALL_POSTS, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.get<PostInfo[]>(this.ALL_POSTS);
   }
 
   createPost(body: Object) {
-    return this.http.post(this.CREATE_POST, body, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.post(this.CREATE_POST, body);
   }
 
   getById(id: string) {
-    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`);
   }
 
   getDetails(id: string) {
-    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`);
   }
 
   editPost(body: Object, id: string) {
-    return this.http.put(this.CREATE_POST + `/${id}`, body, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.put(this.CREATE_POST + `/${id}`, body);
   }
 
   deletePost(id: string) {
-    return this.http.delete(this.CREATE_POST + `/${id}`, {
-      headers: new HttpHeaders({
-        'Authorization': `Kinvey ${localStorage.getItem('token')}`
-      })
-    });
+    return this.http.delete(this.CREATE_POST + `/${id}`);
   }
 
   getUserPosts() {
     return this.http
-      .get<PostInfo[]>(`${this.BASE_URL}/posts?query={"author":"${localStorage.getItem('username')}"}&sort={"_kmd.ect": -1}`, {
-        headers: new HttpHeaders({
-          'Authorization': `Kinvey ${localStorage.getItem('token')}`
-        })
-      });
+      .get<PostInfo[]>(`${this.BASE_URL}/posts?query={"author":"${localStorage.getItem('username')}"}&sort={"_kmd.ect": -1}`);
   }
 }
