@@ -1,0 +1,17 @@
+<form action="/searchTeam" class="search">
+    <label>Search:</label>
+    <input type="text" name="search" value="{{nameSearch}}">
+    <input type="submit" value="Search">
+</form>
+
+<div class="teams">
+        {{#each teams}}
+        <div class="team">
+            <h2>Search results for Team:</h2>
+
+            <h2>{{name}}</h2>
+        </div>
+        {{/each}}
+</div>
+
+

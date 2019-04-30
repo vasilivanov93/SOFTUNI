@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projects Manager</title>
+    <link href="/css/site.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <ul>
+        <li><a href="/">Home</a></li>
+
+        {{#if isAdmin}}
+            <div class="right">
+                <li>Welcome, {{user.username}}!</li>
+
+                <li><a href="/users/profile">Profile</a></li>
+
+                <li>
+                    <form id="logout-form" action="/users/logout" method="post"></form>
+                    <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+                </li>
+            </div>
+
+            <li><a href="/project/projectsAdmin">Projects</a></li>
+
+            <li><a href="/team/teamsAdmin">Teams</a></li>
+
+            <li><a href="/team/create">Create Team</a></li>
+
+            <li><a href="/project/create">Create Project</a></li>
+        {{else if user}}
+            <div class="right">
+                <li>Welcome, {{user.username}}!</li>
+
+                <li><a href="/users/profile">Profile</a></li>
+
+                <li>
+                    <form id="logout-form" action="/users/logout" method="post"></form>
+                    <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+                </li>
+            </div>
+
+            <li><a href="/users/projectsUser">Projects</a></li>
+
+            <li><a href="/users/teamsUser">Teams</a></li>
+        {{else}}
+        <div class="right">
+            <li><a href="/users/login">Login</a></li>
+
+            <li><a href="/users/register">Register</a></li>
+        </div>
+        {{/if}}
+    </ul>
+</header>
+<main>
+    {{{body}}}
+</main>
+<footer>
+    Express Exam @SoftUni
+</footer>
+</body>
+
+</html>
