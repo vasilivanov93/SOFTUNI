@@ -1,0 +1,90 @@
+ + start XAMMP with MqSQL
+ 
+ + start Heidi
+ 
+ + import project in IJ with Maven
+
+ + create Entity
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Integer id;
+
+@Column
+private String name;
+
+@Column
+private String nickname;
+
+@Column
+private Double price;
+
+ + click alt + Insert and make Getter and Setter (on every line), Constructor (on every line), empty Constructor
+
+ + create BindingModel - copy name, nickname, price and remove annotation column,
+  and click alt + Insert and make Getter and Setter, Constructor and Empty Constructor;
+
+ + create Controller
+
+ INDEX:
+public String index(Model model) {
+    List<Cat> cats = catRepository.findAll();
+
+    model.addAttribute("view", "cat/index");
+    model.addAttribute("cats", cats);
+
+    return "base-layout";
+}
+
+ CREATE Get and Post:
+public String create(Model model) {
+	model.addAttribute("view", "cat/create");
+
+	return "base-layout";
+}
+
+public String createProcess(Model model, CatBindingModel catBindingModel) {
+	Cat cat = new Cat(catBindingModel.getName(), catBindingModel.getNickname(), catBindingModel.getPrice());
+	catRepository.saveAndFlush(cat);
+
+	return "redirect:/";
+}
+
+ EDIT Get and Post:
+public String edit(Model model, @PathVariable int id) {
+    Cat cat = catRepository.findOne(id);
+
+    model.addAttribute("view", "cat/edit");
+    model.addAttribute("cat", cat);
+
+    return "base-layout";
+}
+
+public String editProcess(@PathVariable int id, Model model, CatBindingModel catBindingModel) {
+    Cat cat = catRepository.findOne(id);
+
+    cat.setName(catBindingModel.getName());
+    cat.setNickname(catBindingModel.getNickname());
+    cat.setPrice(catBindingModel.getPrice());
+
+    catRepository.saveAndFlush(cat);
+
+    return "redirect:/";
+}
+
+ DELETE Get and Post:
+public String delete(Model model, @PathVariable int id) {
+    Cat cat = catRepository.findOne(id);
+
+    model.addAttribute("view", "cat/delete");
+    model.addAttribute("cat", cat);
+
+    return "base-layout";
+}
+
+public String deleteProcess(@PathVariable int id, CatBindingModel catBindingModel) {
+    catRepository.delete(id);
+
+    return "redirect:/";
+}
+
+
